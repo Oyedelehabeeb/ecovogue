@@ -41,3 +41,27 @@ export async function getSpecials() {
 
   return data;
 }
+
+export async function getCart() {
+  const { data, error } = await supabase
+    .from("cart")
+    .select("*")
+    .eq("type", "women");
+
+  if (error) {
+    console.error(error);
+    notFound();
+  }
+
+  return data;
+}
+export async function getQuantity() {
+  const { data, error } = await supabase.from("cart").select("quantity");
+
+  if (error) {
+    console.error(error);
+    notFound();
+  }
+
+  return data;
+}

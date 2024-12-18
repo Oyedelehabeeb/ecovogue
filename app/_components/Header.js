@@ -23,7 +23,7 @@ const Header = () => {
                 <Link href="/men">Men</Link>
               </li>
               <li>
-                <Link href="/about-us">About Us</Link>
+                <Link href="/about">About Us</Link>
               </li>
             </ul>
           </nav>
@@ -49,18 +49,24 @@ const Header = () => {
             </button>
           </div>
 
-          <button className="rounded-lg px-4 py-2 flex items-center">
+          <Link
+            href="/signin"
+            className="rounded-lg px-4 py-2 flex items-center"
+          >
             <CiUser className="h-5 w-5 mr-2" />
             Sign In
-          </button>
-          <button className=" rounded-lg px-4 py-2 flex items-center">
+          </Link>
+          <Link
+            href="/saved"
+            className=" rounded-lg px-4 py-2 flex items-center"
+          >
             <MdFavorite className="h-5 w-5 mr-2" />
             Saved
-          </button>
-          <button className="rounded-lg px-4 py-2 flex items-center">
+          </Link>
+          <Link href="/cart" className="rounded-lg px-4 py-2 flex items-center">
             <ShoppingCart className="h-5 w-5 mr-2" />
             Cart
-          </button>
+          </Link>
         </div>
       </div>
       <nav className=" text-stone-700">

@@ -2,6 +2,7 @@ import localFont from "next/font/local";
 import "@/app/_styles/globals.css";
 import Header from "./_components/Header";
 import Footer from "./_components/Footer";
+import { CartProvider } from "./_components/CartContext";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -44,15 +45,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="min-h-screen flex flex-col bg-white">
-        {/* Header */}
         <header className="w-full py-2 fixed top-0 left-0 bg-white z-50">
           <Header />
         </header>
 
-        {/* Main */}
-        <main className="flex-grow w-full pt-[60px]">{children}</main>
+        <main className="flex-grow w-full pt-[60px]">
+          <CartProvider>{children}</CartProvider>
+        </main>
 
-        {/* Footer */}
         <footer className="w-full">
           <Footer />
         </footer>
