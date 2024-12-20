@@ -14,7 +14,7 @@ function OrderSummary({ cartItems }) {
 
   return (
     <>
-      <h2 className="text-xl font-bold mb-4">Order Summary</h2>
+      <h2 className="text-xl text-customGreen font-bold mb-4">Order Summary</h2>
       <div className="space-y-4">
         <div className="flex justify-between">
           <span>Subtotal</span>
@@ -37,7 +37,7 @@ function OrderSummary({ cartItems }) {
 
       <Button className="w-full mt-6">Proceed to Checkout</Button>
 
-      <p className="text-sm text-gray-600 text-center mt-4">
+      <p className="text-sm text-gray-600 pb-3 text-center mt-4">
         Shipping and taxes calculated at checkout
       </p>
     </>

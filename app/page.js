@@ -1,4 +1,5 @@
 import placeholderImage from "@/public/placeholder-image.png";
+import landingPageImage from "@/public/landing-page.jpg";
 import placeholder from "@/public/placeholder.png";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
@@ -14,49 +15,6 @@ import ProductCard from "./_components/ProductCard";
 export const revalidate = 30;
 
 export default async function Home() {
-  // const products = [
-  //   {
-  //     name: "High-Waisted Recycled Jeans",
-  //     image: "/category-02.png",
-  //     buttonText: "Add to Cart +",
-  //   },
-  //   {
-  //     name: "Organic Cotton Oversized Shirt",
-  //     image: "/category-02.png",
-  //     buttonText: "Add to Cart +",
-  //   },
-  //   {
-  //     name: "Recycled Denim Jacket",
-  //     image: "/category-02.png",
-  //     buttonText: "Add to Cart +",
-  //   },
-  //   {
-  //     name: "Eco-Friendly Knit Sweater",
-  //     image: "/category-02.png",
-  //     buttonText: "Add to Cart +",
-  //   },
-  // {
-  //   name: "Sustainable Linen Dress",
-  //   image: "https://via.placeholder.com/300",
-  //   buttonText: "Add to Cart +",
-  // },
-  // {
-  //   name: "Organic Wool Cardigan",
-  //   image: "https://via.placeholder.com/300",
-  //   buttonText: "Add to Cart +",
-  // },
-
-  // const specials = [
-  //   {
-  //     name: "In the Season",
-  //     image: "https://via.placeholder.com/300",
-  //   },
-  //   {
-  //     name: "For occassions",
-  //     image: "https://via.placeholder.com/300",
-  //   },
-  // ];
-
   const [categories, featured, trending, specials] = await Promise.all([
     getCategories(),
     getFeatured(),
@@ -70,7 +28,7 @@ export default async function Home() {
         <div className="relative w-full h-screen">
           {/* Background Image */}
           <Image
-            src={placeholderImage}
+            src={landingPageImage}
             className="object-cover"
             placeholder="blur"
             quality={80}
@@ -89,7 +47,6 @@ export default async function Home() {
             </p>
             <div className="flex justify-center space-x-4">
               <Button>Shop women</Button>
-
               <Button>Shop Men</Button>
             </div>
           </div>
@@ -109,6 +66,7 @@ export default async function Home() {
               {categories.map((product, index) => (
                 <div key={index}>
                   <ProductCard
+                    productId={product.id}
                     name={product.name}
                     imageUrl={product.imageUrl}
                   />
@@ -136,6 +94,7 @@ export default async function Home() {
               {featured.map((product, index) => (
                 <div key={index}>
                   <ProductCard
+                    productId={product.id}
                     name={product.name}
                     imageUrl={product.imageUrl}
                   />
@@ -163,6 +122,7 @@ export default async function Home() {
               {trending.map((product, index) => (
                 <div key={index}>
                   <ProductCard
+                    productId={product.id}
                     name={product.name}
                     imageUrl={product.imageUrl}
                   />

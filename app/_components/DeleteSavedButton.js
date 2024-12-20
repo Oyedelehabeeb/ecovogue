@@ -1,11 +1,11 @@
 "use client";
 
 import { Trash2 } from "lucide-react";
-import { deleteCartItem } from "../_lib/actions";
+import { deleteSavedItem } from "../_lib/actions";
 
-export default function DeleteCartButton({ itemId }) {
+function DeleteSavedButton({ itemId }) {
   async function handleDelete() {
-    await deleteCartItem(itemId);
+    await deleteSavedItem(itemId);
   }
   return (
     <button onClick={handleDelete} className="text-red-500 hover:text-red-700">
@@ -13,3 +13,5 @@ export default function DeleteCartButton({ itemId }) {
     </button>
   );
 }
+
+export default DeleteSavedButton;

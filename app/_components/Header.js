@@ -11,19 +11,25 @@ const bitter = Bitter({
 
 const Header = () => {
   return (
-    <header className="bg-white divide-y-2 divide-gray-100">
+    <header className="bg-white divide-y-2 divide-gray-100 border border-black">
       <div className="container mx-auto flex justify-between items-center px-4 py-4">
         <div className="flex items-center">
           <nav className="ml-8">
             <ul className="flex space-x-6">
               <li>
-                <Link href="/women">Women</Link>
+                <Link href="/women" className="text-customGreen">
+                  Women
+                </Link>
               </li>
               <li>
-                <Link href="/men">Men</Link>
+                <Link href="/men" className="text-customGreen">
+                  Men
+                </Link>
               </li>
               <li>
-                <Link href="/about">About Us</Link>
+                <Link href="/about" className="text-customGreen">
+                  About Us
+                </Link>
               </li>
             </ul>
           </nav>
@@ -31,7 +37,7 @@ const Header = () => {
         <div>
           <Link href="/">
             <h1
-              className={`${bitter.className} font-semibold text-black text-2xl`}
+              className={`${bitter.className} font-semibold text-customGreen text-xl sm:text-3xl`}
             >
               ECOVOGUE
             </h1>
@@ -51,42 +57,63 @@ const Header = () => {
 
           <Link
             href="/signin"
-            className="rounded-lg px-4 py-2 flex items-center"
+            className="rounded-lg px-4 py-2 flex items-center text-customGreen"
           >
-            <CiUser className="h-5 w-5 mr-2" />
+            <CiUser className="h-5 w-5 mr-2 text-customGreen" />
             Sign In
           </Link>
           <Link
             href="/saved"
-            className=" rounded-lg px-4 py-2 flex items-center"
+            className=" rounded-lg px-4 py-2 flex items-center text-customGreen"
           >
-            <MdFavorite className="h-5 w-5 mr-2" />
+            <MdFavorite className="h-5 w-5 mr-2 text-customGreen" />
             Saved
           </Link>
-          <Link href="/cart" className="rounded-lg px-4 py-2 flex items-center">
-            <ShoppingCart className="h-5 w-5 mr-2" />
+          <Link
+            href="/cart"
+            className="rounded-lg px-4 py-2 flex items-center text-customGreen"
+          >
+            <ShoppingCart className="h-5 w-5 mr-2 text-customGreen" />
             Cart
           </Link>
         </div>
       </div>
       <nav className=" text-stone-700">
         <div className="container mx-auto px-4 py-4 flex justify-center space-x-8">
-          <Link href="/discounted-items" className="hover:text-gray-400">
+          <Link
+            href="/discountedItems"
+            className=" text-customGreen hover:text-gray-400"
+          >
             Discounted Items
           </Link>
-          <Link href="/best-sellers" className="hover:text-gray-400">
+          <Link
+            href="/best-sellers"
+            className=" text-customGreen hover:text-gray-400"
+          >
             Best Sellers
           </Link>
-          <Link href="/winter-essentials" className="hover:text-gray-400">
+          <Link
+            href="/winter-essentials"
+            className=" text-customGreen hover:text-gray-400"
+          >
             Winter Essentials
           </Link>
-          <Link href="/new-arrivals" className="hover:text-gray-400">
+          <Link
+            href="/new-arrivals"
+            className=" text-customGreen hover:text-gray-400"
+          >
             New Arrivals
           </Link>
-          <Link href="/limited-edition-items" className="hover:text-gray-400">
+          <Link
+            href="/limited-edition-items"
+            className=" text-customGreen hover:text-gray-400"
+          >
             Limited Edition Items
           </Link>
-          <Link href="/on-sale" className="hover:text-gray-400">
+          <Link
+            href="/on-sale"
+            className=" text-customGreen hover:text-gray-400"
+          >
             On Sale
           </Link>
         </div>

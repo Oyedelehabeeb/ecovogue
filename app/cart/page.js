@@ -7,6 +7,7 @@ import Image from "next/image";
 import Button from "../_components/Button";
 import { getCart } from "../_lib/data-service";
 import OrderSummary from "../_components/OrderSummary";
+import AddToSavedButton from "../_components/AddToSavedButton";
 
 // import { updateCartItemQuantity } from "@/app/_lib/actions.js";
 
@@ -54,7 +55,7 @@ export default async function CartPage() {
             {cartItems.map((item) => (
               <div
                 key={item.id}
-                className="flex items-center border-b pb-6 relative"
+                className="flex items-center pb-6 relative shadow-lg"
               >
                 <div className="w-24 h-24 mr-6 relative">
                   <Image
@@ -77,18 +78,16 @@ export default async function CartPage() {
                   </div>
                 </div>
 
-                <div className="absolute top-0 right-0 flex space-x-2">
-                  <DeleteCartButton cartItems={cartItems} />
-                  <button className="text-gray-500 hover:text-gray-700">
-                    <Heart size={20} />
-                  </button>
+                <div className="absolute top-0 right-3 flex space-x-2">
+                  <DeleteCartButton cartItems={cartItems} itemId={item.id} />
+                  <AddToSavedButton item={item} />
                 </div>
               </div>
             ))}
           </div>
 
           {/* Order Summary Column */}
-          <div className="bg-gray-50 p-6 rounded-lg h-fit">
+          <div className="bg-gray-50 px-6 pt-4 rounded-lg h-fit border border-customGreen">
             <OrderSummary cartItems={cartItems} />
           </div>
         </div>
