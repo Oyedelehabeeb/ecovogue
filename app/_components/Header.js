@@ -11,7 +11,7 @@ const bitter = Bitter({
 
 const Header = () => {
   return (
-    <header className="bg-white divide-y-2 divide-gray-100 border border-black">
+    <header className="bg-white divide-y-2 divide-gray-100">
       <div className="container mx-auto flex justify-between items-center px-4 py-4">
         <div className="flex items-center">
           <nav className="ml-8">

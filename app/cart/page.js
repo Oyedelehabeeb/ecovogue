@@ -39,7 +39,7 @@ export default async function CartPage() {
 
   return (
     <div className="container mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold mb-8 text-center">
+      <h1 className="text-3xl font-bold mt-10 text-customGreen text-center">
         Your Shopping Cart
       </h1>
 
@@ -49,7 +49,7 @@ export default async function CartPage() {
           <Button>Continue Shopping</Button>
         </div>
       ) : (
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8 mt-6">
           {/* Cart Items Column */}
           <div className="md:col-span-2 space-y-6">
             {cartItems.map((item) => (

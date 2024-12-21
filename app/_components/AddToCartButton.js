@@ -3,6 +3,7 @@
 import { ShoppingCart } from "lucide-react";
 import Button from "./Button";
 import { addToCart } from "../_lib/actions";
+import { toast } from "sonner";
 
 function AddToCartButton({ item }) {
   async function handleAddToCart() {
@@ -15,11 +16,10 @@ function AddToCartButton({ item }) {
         price: item.price,
         imageUrl: item.imageUrl,
       });
-
-      alert("Item added to cart!");
+      toast.success("Item added to cart");
     } catch (error) {
       console.error("Error adding to cart:", error);
-      alert("Failed to add item to cart");
+      toast.error("Failed to add item to cart");
     }
   }
 

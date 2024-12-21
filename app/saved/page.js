@@ -12,7 +12,7 @@ export default async function SavedItemsPage() {
 
   return (
     <div className="container mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold mb-8 text-center">
+      <h1 className="text-3xl font-bold mt-10 text-customgGreen text-center">
         Saved Items
         <span className="text-gray-500 text-lg ml-4">
           ({savedItems.length} items)
