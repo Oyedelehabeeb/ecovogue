@@ -1,33 +1,20 @@
-import {
-  getCategories,
-  getFeatured,
-  getTrending,
-  getAllProductsById,
-} from "../_lib/data-service";
+import { getAllProducts, getAllProductsById } from "../_lib/data-service";
 
 export async function generateStaticParams() {
-  const categories = await getCategories();
-  const featured = await getFeatured();
-  const trendings = await getTrending();
+  const products = await getAllProducts();
 
-  const ids = [
-    ...categories.map((category) => ({ productId: String(category.id) })),
-    ...featured.map((feature) => ({ productId: String(feature.id) })),
-    ...trendings.map((trending) => ({ productId: String(trending.id) })),
-  ];
-
-  // Remove duplicates
-  const uniqueIds = Array.from(new Set(ids.map((item) => item.productId))).map(
-    (id) => ({ productId: id })
-  );
-
-  return uniqueIds;
+  const productsId = products?.map((product) => ({
+    productId: String(product.productId),
+  }));
+  return productsId;
 }
 
 export default async function Page({ params }) {
-  const product = await getAllProductsById().find(
-    (product) => product.id === Number(params.productId)
-  );
+  const product = await getAllProductsById(params.productId);
+
+  if (!product) {
+    return <div>Product not found</div>;
+  }
 
   return (
     <div className="container mx-auto p-4">

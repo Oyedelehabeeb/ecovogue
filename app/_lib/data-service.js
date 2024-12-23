@@ -93,11 +93,11 @@ export async function fetchProductById(productId) {
   return data;
 }
 
-export async function getAllProductsById(id) {
+export async function getAllProducts() {
   const [categories, featured, trending] = await Promise.all([
-    supabase.from("categories").select("*").eq("id", id),
-    supabase.from("featured").select("*").eq("id", id),
-    supabase.from("trending").select("*").eq("id", id),
+    supabase.from("categories").select("*"),
+    supabase.from("featured").select("*"),
+    supabase.from("trending").select("*"),
   ]);
 
   if (categories.error || featured.error || trending.error) {
@@ -105,9 +105,26 @@ export async function getAllProductsById(id) {
     notFound();
   }
 
-  return {
-    categories: categories.data,
-    featured: featured.data,
-    trending: trending.data,
-  };
+  // Combine all products into a single array
+  const allProducts = [...categories.data, ...featured.data, ...trending.data];
+
+  return allProducts;
+}
+export async function getAllProductsById(productId) {
+  const [categories, featured, trending] = await Promise.all([
+    supabase.from("categories").select("*").eq("productId", productId),
+    supabase.from("featured").select("*").eq("productId", productId),
+    supabase.from("trending").select("*").eq("productId", productId),
+  ]);
+
+  if (categories.error || featured.error || trending.error) {
+    console.error(categories.error || featured.error || trending.error);
+    notFound();
+  }
+
+  // Combine all products into a single array
+  const allProducts = [...categories.data, ...featured.data, ...trending.data];
+
+  // Return the first product found (assuming productId is unique across all tables)
+  return allProducts.length > 0 ? allProducts[0] : null;
 }
