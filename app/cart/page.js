@@ -9,30 +9,9 @@ import { getCart } from "../_lib/data-service";
 import OrderSummary from "../_components/OrderSummary";
 import AddToSavedButton from "../_components/AddToSavedButton";
 
-// import { updateCartItemQuantity } from "@/app/_lib/actions.js";
+export const revalidate = 0;
 
 export default async function CartPage() {
-  // const [cartItems, setCartItems] = useState([
-  //   {
-  //     id: 1,
-  //     name: "Organic Cotton Oversized Shirt",
-  //     price: 89.99,
-  //     size: "M",
-  //     color: "Sage Green",
-  //     quantity: 1,
-  //     image: "/placeholder-image.png",
-  //   },
-  //   {
-  //     id: 2,
-  //     name: "High-Waisted Recycled Jeans",
-  //     price: 129.99,
-  //     size: "S",
-  //     color: "Indigo Blue",
-  //     quantity: 2,
-  //     image: "/placeholder-image.png",
-  //   },
-  // ]);
-
   const cartItems = await getCart();
 
   const quantity = 1;
@@ -50,7 +29,6 @@ export default async function CartPage() {
         </div>
       ) : (
         <div className="grid md:grid-cols-3 gap-8 mt-6">
-          {/* Cart Items Column */}
           <div className="md:col-span-2 space-y-6">
             {cartItems.map((item) => (
               <div
@@ -86,7 +64,6 @@ export default async function CartPage() {
             ))}
           </div>
 
-          {/* Order Summary Column */}
           <div className="bg-gray-50 px-6 pt-4 rounded-lg h-fit border border-customGreen">
             <OrderSummary cartItems={cartItems} />
           </div>

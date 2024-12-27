@@ -11,6 +11,7 @@ import {
   getTrending,
 } from "./_lib/data-service";
 import ProductCard from "./_components/ProductCard";
+import Link from "next/link";
 
 export const revalidate = 30;
 
@@ -66,7 +67,8 @@ export default async function Home() {
               {categories.map((product, index) => (
                 <div key={index}>
                   <ProductCard
-                    productId={product.id}
+                    id={product.id}
+                    productId={product.productId}
                     name={product.name}
                     imageUrl={product.imageUrl}
                   />
@@ -94,7 +96,8 @@ export default async function Home() {
               {featured.map((product, index) => (
                 <div key={index}>
                   <ProductCard
-                    productId={product.id}
+                    id={product.id}
+                    productId={product.productId}
                     name={product.name}
                     imageUrl={product.imageUrl}
                   />
@@ -122,7 +125,8 @@ export default async function Home() {
               {trending.map((product, index) => (
                 <div key={index}>
                   <ProductCard
-                    productId={product.id}
+                    id={product.id}
+                    productId={product.productId}
                     name={product.name}
                     imageUrl={product.imageUrl}
                   />
@@ -142,7 +146,7 @@ export default async function Home() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3: lg:grid-cols-2 px-10 gap-6">
             {specials.map((product, index) => (
-              <div className="" key={index}>
+              <Link href={`/${product.productId}`} className="" key={index}>
                 <div>
                   <img
                     src={product.imageUrl}
@@ -151,7 +155,7 @@ export default async function Home() {
                   />
                 </div>
                 <h2 className="font-semibold">{product.name}</h2>
-              </div>
+              </Link>
             ))}
           </div>
         </section>

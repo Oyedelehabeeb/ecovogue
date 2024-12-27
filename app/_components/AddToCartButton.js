@@ -25,10 +25,10 @@ function AddToCartButton({ item }) {
 
   return (
     <Button
-      className="flex-grow flex items-center justify-center"
+      // className="flex-grow flex items-center justify-center"
       onClick={handleAddToCart}
     >
-      <ShoppingCart size={16} className="mr-2" />
+      {/* <ShoppingCart size={16} className="mr-2" /> */}
       Add to Cart
     </Button>
   );
