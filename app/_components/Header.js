@@ -87,7 +87,7 @@ const Header = () => {
             Discounted Items
           </Link>
           <Link
-            href="/best-sellers"
+            href="/bestseller"
             className=" text-customGreen hover:text-gray-400"
           >
             Best Sellers

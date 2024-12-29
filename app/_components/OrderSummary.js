@@ -35,7 +35,7 @@ function OrderSummary({ cartItems }) {
         </div>
       </div>
 
-      <Button className="w-full mt-6">Proceed to Checkout</Button>
+      {/* <Button className="w-full mt-6">Proceed to Checkout</Button> */}
 
       <p className="text-sm text-gray-600 pb-3 text-center mt-4">
         Shipping and taxes calculated at checkout

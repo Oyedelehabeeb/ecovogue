@@ -1,8 +1,6 @@
-// "use client";
-
 import DeleteCartButton from "@/app/_components/DeleteCartButton";
 import QuantityButton from "@/app/_components/QuantityButton";
-import { Heart } from "lucide-react";
+import { Heart, ShoppingBag, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Button from "../_components/Button";
 import { getCart } from "../_lib/data-service";
@@ -13,62 +11,99 @@ export const revalidate = 0;
 
 export default async function CartPage() {
   const cartItems = await getCart();
-
   const quantity = 1;
 
+  if (!cartItems || cartItems.length === 0) {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center p-4">
+        <ShoppingBag className="w-16 h-16 text-gray-300 mb-4" />
+        <h2 className="text-2xl font-semibold text-gray-800 mb-2">
+          Your cart is empty
+        </h2>
+        <p className="text-gray-600 mb-4">
+          Add items to your cart to continue shopping
+        </p>
+        <Button>Continue Shopping</Button>
+      </div>
+    );
+  }
+
   return (
-    <div className="container mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold mt-10 text-customGreen text-center">
-        Your Shopping Cart
-      </h1>
-
-      {cartItems.length === 0 ? (
-        <div className="text-center py-12">
-          <p className="text-xl text-gray-600 mb-6">Your cart is empty</p>
-          <Button>Continue Shopping</Button>
+    <div className="bg-gray-50 min-h-screen">
+      {/* Progress Stepper */}
+      <div className="container mx-auto px-4 py-8">
+        <div className="flex justify-center items-center space-x-4 mt-20">
+          <div className="flex items-center">
+            <span className="w-8 h-8 rounded-full bg-customGreen text-white flex items-center justify-center">
+              1
+            </span>
+            <span className="ml-2 font-medium">Cart</span>
+          </div>
+          <ArrowRight className="text-gray-400" />
+          <div className="flex items-center">
+            <span className="w-8 h-8 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center">
+              2
+            </span>
+            <span className="ml-2 text-gray-600">Shipping</span>
+          </div>
+          <ArrowRight className="text-gray-400" />
+          <div className="flex items-center">
+            <span className="w-8 h-8 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center">
+              3
+            </span>
+            <span className="ml-2 text-gray-600">Payment</span>
+          </div>
         </div>
-      ) : (
-        <div className="grid md:grid-cols-3 gap-8 mt-6">
-          <div className="md:col-span-2 space-y-6">
-            {cartItems.map((item) => (
-              <div
-                key={item.id}
-                className="flex items-center pb-6 relative shadow-lg"
-              >
-                <div className="w-24 h-24 mr-6 relative">
-                  <Image
-                    src={item.imageUrl}
-                    alt={item.name}
-                    fill
-                    className="object-cover rounded-lg"
-                  />
-                </div>
 
-                <div className="flex-grow">
-                  <h3 className="font-bold text-lg">{item.name}</h3>
-                  <p className="text-gray-600">
-                    Size: {item.size} | Color: {item.color}
-                  </p>
-                  <p className="font-semibold">${item.price.toFixed(2)}</p>
-
-                  <div className="flex items-center mt-2">
-                    <QuantityButton item={item} quantity={quantity} />
+        <div className="flex flex-col lg:flex-row gap-8 mt-8">
+          <div className="lg:w-2/3">
+            <h1 className="text-2xl font-bold mb-6 text-customGreen">
+              Shopping Cart ({cartItems.length} items)
+            </h1>
+            <div className="space-y-4">
+              {cartItems.map((item) => (
+                <div
+                  key={item.id}
+                  className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-200"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-24 h-24 relative rounded-md overflow-hidden">
+                      <Image
+                        src={item.imageUrl}
+                        alt={item.name}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-medium text-gray-800">{item.name}</h3>
+                      <p className="text-sm text-gray-500 mb-2">
+                        Size: {item.size}
+                      </p>
+                      <div className="flex items-center gap-4">
+                        <QuantityButton quantity={quantity} />
+                        <p className="font-semibold">${item.price}</p>
+                      </div>
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <DeleteCartButton itemId={item.id} />
+                      <AddToSavedButton item={item} />
+                    </div>
                   </div>
                 </div>
-
-                <div className="absolute top-0 right-3 flex space-x-2">
-                  <DeleteCartButton cartItems={cartItems} itemId={item.id} />
-                  <AddToSavedButton item={item} />
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
-          <div className="bg-gray-50 px-6 pt-4 rounded-lg h-fit border border-customGreen">
-            <OrderSummary cartItems={cartItems} />
+          {/* Order Summary */}
+          <div className="lg:w-1/3">
+            <div className="bg-white rounded-lg p-6 shadow-sm sticky top-4">
+              <OrderSummary cartItems={cartItems} />
+              <Button className="w-full mt-6">Proceed to Checkout</Button>
+            </div>
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }
