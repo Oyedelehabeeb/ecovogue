@@ -1,9 +1,10 @@
 "use client";
 
+import React from "react";
 import Button from "../_components/Button";
 import { useCart } from "./CartContext";
 
-function OrderSummary({ cartItems }) {
+export default function OrderSummary({ cartItems }) {
   const { quantity } = useCart();
 
   const calculateTotal = () => {
@@ -12,30 +13,40 @@ function OrderSummary({ cartItems }) {
       .toFixed(2);
   };
 
+  const formatToNaira = (amount) => {
+    return new Intl.NumberFormat("en-NG", {
+      style: "currency",
+      currency: "NGN",
+    }).format(amount);
+  };
+
+  const shippingCost = 5000;
+  const taxAmount = 2500;
+
   return (
     <>
-      <h2 className="text-xl text-customGreen font-bold mb-4">Order Summary</h2>
-      <div className="space-y-4">
+      <h2 className="text-xl font-semibold mb-4">Order Summary</h2>
+      <div className="space-y-3">
         <div className="flex justify-between">
           <span>Subtotal</span>
-          <span>${calculateTotal()}</span>
+          <span>{formatToNaira(calculateTotal())}</span>
         </div>
         <div className="flex justify-between">
           <span>Shipping</span>
-          <span>$10.00</span>
+          <span>{formatToNaira(shippingCost)}</span>
         </div>
         <div className="flex justify-between">
           <span>Tax</span>
-          <span>$15.50</span>
+          <span>{formatToNaira(taxAmount)}</span>
         </div>
-        <hr />
+        <hr className="border-gray-200" />
         <div className="flex justify-between font-bold text-lg">
           <span>Total</span>
-          <span>${(parseFloat(calculateTotal()) + 25.5).toFixed(2)}</span>
+          <span>
+            {formatToNaira(calculateTotal() + shippingCost + taxAmount)}
+          </span>
         </div>
       </div>
-
-      {/* <Button className="w-full mt-6">Proceed to Checkout</Button> */}
 
       <p className="text-sm text-gray-600 pb-3 text-center mt-4">
         Shipping and taxes calculated at checkout
@@ -43,5 +54,3 @@ function OrderSummary({ cartItems }) {
     </>
   );
 }
-
-export default OrderSummary;

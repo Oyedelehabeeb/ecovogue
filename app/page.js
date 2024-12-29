@@ -71,6 +71,8 @@ export default async function Home() {
                     productId={product.productId}
                     name={product.name}
                     imageUrl={product.imageUrl}
+                    price={product.price}
+                    rating={product.rating}
                   />
                 </div>
               ))}
@@ -100,6 +102,8 @@ export default async function Home() {
                     productId={product.productId}
                     name={product.name}
                     imageUrl={product.imageUrl}
+                    price={product.price}
+                    rating={product.rating}
                   />
                 </div>
               ))}
@@ -129,6 +133,8 @@ export default async function Home() {
                     productId={product.productId}
                     name={product.name}
                     imageUrl={product.imageUrl}
+                    price={product.price}
+                    rating={product.rating}
                   />
                 </div>
               ))}

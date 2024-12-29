@@ -82,7 +82,12 @@ export default async function CartPage() {
                       </p>
                       <div className="flex items-center gap-4">
                         <QuantityButton quantity={quantity} />
-                        <p className="font-semibold">${item.price}</p>
+                        <p className="font-semibold">
+                          {new Intl.NumberFormat("en-NG", {
+                            style: "currency",
+                            currency: "NGN",
+                          }).format(item.price)}
+                        </p>
                       </div>
                     </div>
                     <div className="flex flex-col gap-2">
