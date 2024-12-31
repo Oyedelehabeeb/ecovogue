@@ -148,3 +148,62 @@ export async function getAllProductsById(productId) {
     notFound();
   }
 }
+
+export async function getWomenProducts() {
+  const [categories, featured, trending, specials] = await Promise.all([
+    supabase.from("categories").select("*").eq("type", "women"),
+    supabase.from("featured").select("*").eq("type", "women"),
+    supabase.from("trending").select("*").eq("type", "women"),
+    supabase.from("specials").select("*").eq("type", "women"),
+  ]);
+
+  if (categories.error || featured.error || trending.error || specials.error) {
+    console.error(
+      categories.error || featured.error || trending.error || specials.error
+    );
+    notFound();
+  }
+
+  const allProducts = [
+    ...categories.data,
+    ...featured.data,
+    ...trending.data,
+    ...specials.data,
+  ];
+
+  return allProducts;
+}
+export async function getMenProducts() {
+  const [categories, featured, trending, specials] = await Promise.all([
+    supabase.from("categories").select("*").eq("type", "men"),
+    supabase.from("featured").select("*").eq("type", "men"),
+    supabase.from("trending").select("*").eq("type", "men"),
+    supabase.from("specials").select("*").eq("type", "men"),
+  ]);
+
+  if (categories.error || featured.error || trending.error || specials.error) {
+    console.error(
+      categories.error || featured.error || trending.error || specials.error
+    );
+    notFound();
+  }
+
+  const allProducts = [
+    ...categories.data,
+    ...featured.data,
+    ...trending.data,
+    ...specials.data,
+  ];
+
+  return allProducts;
+}
+
+export async function getBabiesProducts() {
+  const { data, error } = await supabase.from("babies").select("*");
+
+  if (error) {
+    notFound();
+  }
+
+  return data;
+}

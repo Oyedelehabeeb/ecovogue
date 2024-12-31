@@ -8,7 +8,14 @@ import {
   FaStarHalf,
 } from "react-icons/fa";
 
-const ProductCard = ({ productId, imageUrl, name, price, rating = 0 }) => {
+function DiscountProductCard({
+  productId,
+  imageUrl,
+  name,
+  price,
+  rating = 0,
+  discount,
+}) {
   const truncateName = (text, maxLength = 15) => {
     if (text.length <= maxLength) return text;
     return text.slice(0, maxLength).trim() + "...";
@@ -66,7 +73,7 @@ const ProductCard = ({ productId, imageUrl, name, price, rating = 0 }) => {
         </div>
         <div className="flex justify-between items-center mt-2">
           <span className="text-lg font-semibold text-gray-900">
-            {formatToNaira(price)}
+            {formatToNaira(price - discount)}
           </span>
           <Link
             href={`/${productId}`}
@@ -78,6 +85,6 @@ const ProductCard = ({ productId, imageUrl, name, price, rating = 0 }) => {
       </div>
     </div>
   );
-};
+}
 
-export default ProductCard;
+export default DiscountProductCard;

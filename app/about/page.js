@@ -1,166 +1,182 @@
-import React from "react";
+import trad from "@/public/trad-02.jpg";
 import Image from "next/image";
-import placeholderImage from "@/public/placeholder-image.png";
-import Button from "../_components/Button";
 
-export default function About() {
-  const teamMembers = [
-    {
-      name: "Emma Rodriguez",
-      role: "Founder & Creative Director",
-      bio: "Passionate about sustainable fashion and environmental conservation.",
-      image: "/team/emma.jpg",
-    },
-    {
-      name: "Alex Chen",
-      role: "Sustainability Lead",
-      bio: "Expert in ethical sourcing and circular fashion principles.",
-      image: "/team/alex.jpg",
-    },
-    {
-      name: "Sophia Kim",
-      role: "Design Director",
-      bio: "Innovating fashion with eco-friendly materials and timeless designs.",
-      image: "/team/sophia.jpg",
-    },
-  ];
-
-  const milestones = [
-    {
-      year: 2018,
-      event: "Founded with a mission to revolutionize sustainable fashion",
-    },
-    {
-      year: 2020,
-      event: "Achieved 100% recycled and organic material sourcing",
-    },
-    {
-      year: 2022,
-      event: "Launched carbon-neutral shipping initiative",
-    },
-  ];
-
+export default function Page() {
   return (
-    <div className="bg-white">
+    <div className="bg-gray-50">
       {/* Hero Section */}
-      <div className="relative w-full h-[500px]">
-        <Image
-          src={placeholderImage}
-          alt="EcoVogue Sustainable Fashion"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="text-center text-white px-4">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Redefining Fashion, Respecting Our Planet
-            </h1>
-            <p className="text-xl md:text-2xl max-w-3xl mx-auto">
-              At EcoVogue, we believe fashion can be beautiful, innovative, and
-              kind to our environment.
-            </p>
-          </div>
+      <div className="relative h-[400px] bg-gradient-to-r from-customGreen to-green-600">
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-4">
+          <h1 className="text-5xl font-bold mb-6 text-center">
+            Our Journey to Sustainable Fashion
+          </h1>
+          <p className="text-xl text-gray-100 max-w-2xl text-center">
+            Making style sustainable, one piece at a time
+          </p>
         </div>
       </div>
 
       {/* Our Story Section */}
-      <section className="container mx-auto px-4 py-16 grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 className="text-3xl font-bold mb-6 text-green-800">Our Story</h2>
-          <p className="text-gray-700 mb-4">
-            Founded in 2018, EcoVogue emerged from a deep passion for
-            sustainable fashion and environmental stewardship. We recognized the
-            fashion industry's significant environmental impact and decided to
-            create a brand that doesn't compromise between style and
-            sustainability.
-          </p>
-          <p className="text-gray-700">
-            Every piece we create is a testament to our commitment: thoughtfully
-            designed, ethically produced, and created with the least possible
-            harm to our planet.
-          </p>
-        </div>
-        <div className="grid grid-cols-2 gap-4">
-          <Image
-            src={placeholderImage}
-            alt="EcoVogue Workshop"
-            width={400}
-            height={300}
-            className="rounded-lg object-cover"
-          />
-          <Image
-            src={placeholderImage}
-            alt="Sustainable Materials"
-            width={400}
-            height={300}
-            className="rounded-lg object-cover"
-          />
+      <section className="container mx-auto px-4 py-20">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div className="relative h-[500px] object-cover rounded-lg overflow-hidden">
+            <Image
+              src={trad}
+              alt="Sustainable Fashion Workshop"
+              className="object-cover w-full h-full"
+              placeholder="blur"
+              quality={100}
+            />
+          </div>
+          <div>
+            <h2 className="text-4xl font-bold mb-8 text-customGreen">
+              Our Story
+            </h2>
+            <p className="text-gray-700 mb-6 text-lg leading-relaxed">
+              Founded in 2018, EcoVogue emerged from a deep passion for
+              sustainable fashion and environmental stewardship. We recognized
+              the fashion industry&apos;s significant environmental impact and
+              decided to create a brand that doesn&apos;t compromise between
+              style and sustainability.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Milestones Section */}
-      <section className="bg-gray-50 py-16">
+      {/* Values Section */}
+      <section className="bg-green-50 py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-green-800">
-            Our Journey
+          <h2 className="text-4xl font-bold text-center mb-16 text-customGreen">
+            Our Values
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {milestones.map((milestone, index) => (
-              <div
-                key={index}
-                className="bg-white p-6 rounded-lg shadow-md text-center"
-              >
-                <h3 className="text-2xl font-bold text-green-700 mb-4">
-                  {milestone.year}
-                </h3>
-                <p className="text-gray-600">{milestone.event}</p>
+          <div className="grid md:grid-cols-3 gap-12">
+            <div className="text-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <div className="bg-customGreen/10 rounded-full p-6 w-20 h-20 mx-auto mb-6">
+                <img
+                  src="/icons/sustainable.svg"
+                  alt="Sustainability"
+                  className="w-full h-full"
+                />
               </div>
-            ))}
+              <h3 className="text-xl font-semibold mb-4">Sustainability</h3>
+              <p className="text-gray-600">
+                Using eco-friendly materials and processes to minimize our
+                environmental impact.
+              </p>
+            </div>
+            <div className="text-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <div className="bg-customGreen/10 rounded-full p-6 w-20 h-20 mx-auto mb-6">
+                <img
+                  src="/icons/ethical.svg"
+                  alt="Ethics"
+                  className="w-full h-full"
+                />
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Ethical Production</h3>
+              <p className="text-gray-600">
+                Ensuring fair wages and safe working conditions throughout our
+                supply chain.
+              </p>
+            </div>
+            <div className="text-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <div className="bg-customGreen/10 rounded-full p-6 w-20 h-20 mx-auto mb-6">
+                <img
+                  src="/icons/quality.svg"
+                  alt="Quality"
+                  className="w-full h-full"
+                />
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Quality First</h3>
+              <p className="text-gray-600">
+                Creating durable pieces that last longer and reduce waste.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Team Section */}
-      <section className="container mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold text-center mb-12 text-green-800">
-          Meet Our Team
+      <section className="container mx-auto px-4 py-20">
+        <h2 className="text-4xl font-bold text-center mb-16 text-customGreen">
+          Our Leadership
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
-          {teamMembers.map((member, index) => (
-            <div
-              key={index}
-              className="text-center bg-white p-6 rounded-lg shadow-md"
-            >
-              <div className="w-48 h-48 mx-auto mb-6 relative rounded-full overflow-hidden">
-                <Image
-                  src={placeholderImage}
-                  alt={member.name}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <h3 className="text-xl font-bold mb-2">{member.name}</h3>
-              <p className="text-gray-600 mb-4">{member.role}</p>
-              <p className="text-gray-500">{member.bio}</p>
+          <div className="text-center">
+            <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden">
+              <img
+                src="/team/ceo.jpg"
+                alt="CEO"
+                className="object-cover w-full h-full"
+              />
             </div>
-          ))}
+            <h3 className="text-xl font-semibold mb-2">Sarah Johnson</h3>
+            <p className="text-customGreen mb-2">Chief Executive Officer</p>
+            <p className="text-gray-600">
+              Visionary leader with 15+ years in sustainable fashion
+            </p>
+          </div>
+          <div className="text-center">
+            <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden">
+              <img
+                src="/team/coo.jpg"
+                alt="COO"
+                className="object-cover w-full h-full"
+              />
+            </div>
+            <h3 className="text-xl font-semibold mb-2">Michael Chen</h3>
+            <p className="text-customGreen mb-2">Chief Operations Officer</p>
+            <p className="text-gray-600">
+              Operations expert specializing in ethical supply chains
+            </p>
+          </div>
+          <div className="text-center">
+            <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden">
+              <img
+                src="/team/creative.jpg"
+                alt="Creative Director"
+                className="object-cover w-full h-full"
+              />
+            </div>
+            <h3 className="text-xl font-semibold mb-2">Emma Rodriguez</h3>
+            <p className="text-customGreen mb-2">Creative Director</p>
+            <p className="text-gray-600">
+              Award-winning designer focused on sustainable fashion
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="bg-green-700 text-white py-16 text-center">
+      {/* Impact Stats */}
+      <section className="bg-customGreen/5 py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-6">
-            Join Our Sustainable Fashion Movement
+          <h2 className="text-4xl font-bold text-center mb-16 text-customGreen">
+            Our Impact
           </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Together, we can create a more sustainable future, one garment at a
-            time.
-          </p>
-          <div className="flex justify-center space-x-4">
-            <Button>Shop Sustainable</Button>
-            <Button variant="outline">Learn More</Button>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div className="p-6 bg-white rounded-lg shadow-sm">
+              <div className="text-4xl font-bold text-customGreen mb-2">
+                50K+
+              </div>
+              <p className="text-gray-600">Trees Planted</p>
+            </div>
+            <div className="p-6 bg-white rounded-lg shadow-sm">
+              <div className="text-4xl font-bold text-customGreen mb-2">
+                75%
+              </div>
+              <p className="text-gray-600">Recycled Materials</p>
+            </div>
+            <div className="p-6 bg-white rounded-lg shadow-sm">
+              <div className="text-4xl font-bold text-customGreen mb-2">
+                100K+
+              </div>
+              <p className="text-gray-600">Happy Customers</p>
+            </div>
+            <div className="p-6 bg-white rounded-lg shadow-sm">
+              <div className="text-4xl font-bold text-customGreen mb-2">
+                90%/
+              </div>
+              <p className="text-gray-600">Waste Reduction</p>
+            </div>
           </div>
         </div>
       </section>
