@@ -4,6 +4,7 @@ import Button from "../_components/Button";
 import ProductCard from "../_components/ProductCard";
 import { getDiscountedItems } from "../_lib/data-service";
 import DiscountProductGrid from "../_components/DiscountProductGrid";
+import { Search } from "lucide-react";
 
 export const revalidate = 30;
 
@@ -26,24 +27,29 @@ export default async function DiscountedItemsPage() {
       </div>
 
       <div className="container mx-auto px-4 py-8">
-        {/* Filter Section */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
-          <div className="flex space-x-4 mb-4 md:mb-0">
-            <select className="px-4 py-2 border rounded-md">
-              <option>All Categories</option>
-              <option>70% Off & Above</option>
-              <option>50% Off & Above</option>
-              <option>30% Off & Above</option>
-            </select>
-            <select className="px-4 py-2 border rounded-md">
-              <option>Biggest Discount</option>
+          <div className="flex flex-wrap gap-4 items-center w-full md:w-auto mb-4 md:mb-0">
+            {/* Search Input */}
+            <div className="relative flex-1 md:flex-none md:w-64">
+              <input
+                type="search"
+                placeholder="Search products..."
+                className="bg-gray-100 rounded-lg px-4 py-2 pr-8 w-64 pl-10 border focus:outline-none focus:ring-2 focus:ring-customGreen"
+              />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
+            </div>
+
+            {/* Filters */}
+
+            <select className="px-4 py-2 border rounded-md bg-gray-100">
+              <option>Latest Arrivals</option>
               <option>Price: Low to High</option>
               <option>Price: High to Low</option>
               <option>Most Popular</option>
             </select>
           </div>
-          <div className="text-sm text-red-600 font-medium">
-            {discountedItems.length} items on sale
+          <div className="text-sm text-gray-600">
+            {initialProducts.length} items found
           </div>
         </div>
 

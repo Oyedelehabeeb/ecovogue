@@ -1,5 +1,6 @@
 import { getAllProducts } from "../_lib/data-service";
 import ProductGrid from "../_components/ProductGrid";
+import { Search } from "lucide-react";
 
 export const revalidate = 30;
 
@@ -17,23 +18,7 @@ export default async function Page() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-8">
-        <div className="flex flex-col md:flex-row justify-between items-center mb-8">
-          <div className="flex space-x-4 mb-4 md:mb-0">
-            <select className="px-4 py-2 border rounded-md">
-              <option>All Categories</option>
-              <option>Electronics</option>
-              <option>Clothing</option>
-              <option>Books</option>
-            </select>
-            <select className="px-4 py-2 border rounded-md">
-              <option>Price: Low to High</option>
-              <option>Price: High to Low</option>
-              <option>Most Popular</option>
-            </select>
-          </div>
-        </div>
-
+      <div>
         <ProductGrid initialProducts={initialProducts} />
       </div>
     </div>
