@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { FcGoogle } from "react-icons/fc";
+import SigninButton from "../_components/SigninButton";
 
 export default function SignInPage() {
   return (
@@ -17,14 +18,7 @@ export default function SignInPage() {
               </p>
             </div>
 
-            <button
-              type="button"
-              className="w-full flex items-center justify-center px-4 py-3 border border-gray-300 rounded-md shadow-sm text-base font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors duration-200"
-            >
-              <FcGoogle className="h-6 w-6 mr-2" />
-              Continue with Google
-            </button>
-
+            <SigninButton />
             <p className="mt-8 text-center text-sm text-gray-600">
               Don&apos;t have an account?{" "}
               <Link
