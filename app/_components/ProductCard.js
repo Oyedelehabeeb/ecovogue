@@ -7,8 +7,16 @@ import {
   FaStar,
   FaStarHalf,
 } from "react-icons/fa";
+import ProductMenu from "./ProductMenu";
 
-const ProductCard = ({ productId, imageUrl, name, price, rating = 0 }) => {
+const ProductCard = ({
+  productId,
+  imageUrl,
+  name,
+  price,
+  rating = 0,
+  item,
+}) => {
   const truncateName = (text, maxLength = 15) => {
     if (text.length <= maxLength) return text;
     return text.slice(0, maxLength).trim() + "...";
@@ -48,9 +56,7 @@ const ProductCard = ({ productId, imageUrl, name, price, rating = 0 }) => {
           className="w-full h-full object-cover rounded-t-lg"
         />
         <div className="absolute inset-0 flex items-center justify-center space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <FaCartPlus size={36} className="text-customGreen text-2xl" />
-          <FaHeart size={36} className="text-customGreen text-2xl" />
-          <FaInfoCircle size={36} className="text-customGreen text-2xl" />
+          <ProductMenu item={item} />
         </div>
       </div>
       <div className="flex flex-col flex-grow p-3">

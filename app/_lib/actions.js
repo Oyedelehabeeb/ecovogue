@@ -60,6 +60,6 @@ export async function addToSaved(newItem) {
   redirect("/saved");
 }
 
-export async function signInAction() {
-  await signIn("google", { redirectTo: "/" });
-}
+// export async function signInAction() {
+//   await signIn("google", { redirectTo: "/" });
+// }

@@ -120,6 +120,7 @@ export default function DiscountProductGrid({ initialProducts }) {
               {formatToNaira(product.discountPercentage)}% OFF
             </div>
             <DiscountProductCard
+              item={product}
               productId={product.productId}
               name={product.name}
               imageUrl={product.imageUrl}
