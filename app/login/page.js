@@ -1,6 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
-import { FcGoogle } from "react-icons/fc";
 import SigninButton from "../_components/SigninButton";
 
 export default function SignInPage() {
@@ -18,7 +16,9 @@ export default function SignInPage() {
               </p>
             </div>
 
-            <SigninButton />
+            <div>
+              <SigninButton />
+            </div>
             <p className="mt-8 text-center text-sm text-gray-600">
               Don&apos;t have an account?{" "}
               <Link
