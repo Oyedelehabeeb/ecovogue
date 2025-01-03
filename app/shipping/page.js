@@ -49,7 +49,7 @@ export default async function ShippingPage() {
             <span className="w-8 h-8 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center">
               3
             </span>
-            <span className="ml-2 text-gray-600">Payment</span>
+            <span className="ml-2 text-gray-600">Success</span>
           </div>
         </div>
 
