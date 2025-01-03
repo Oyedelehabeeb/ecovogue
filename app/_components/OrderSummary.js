@@ -8,9 +8,7 @@ export default function OrderSummary({ cartItems }) {
   const { quantity } = useCart();
 
   const calculateTotal = () => {
-    return cartItems
-      .reduce((total, item) => total + item.price * quantity, 0)
-      .toFixed(2);
+    return cartItems.reduce((total, item) => total + item.price * quantity, 0);
   };
 
   const formatToNaira = (amount) => {
@@ -20,8 +18,8 @@ export default function OrderSummary({ cartItems }) {
     }).format(amount);
   };
 
-  const shippingCost = 5000;
-  const taxAmount = 2500;
+  const deliveryCost = 0.0;
+  const taxAmount = 100.0;
 
   return (
     <>
@@ -33,7 +31,7 @@ export default function OrderSummary({ cartItems }) {
         </div>
         <div className="flex justify-between">
           <span>Shipping</span>
-          <span>{formatToNaira(shippingCost)}</span>
+          <span>{formatToNaira(deliveryCost)}</span>
         </div>
         <div className="flex justify-between">
           <span>Tax</span>
@@ -43,7 +41,7 @@ export default function OrderSummary({ cartItems }) {
         <div className="flex justify-between font-bold text-lg">
           <span>Total</span>
           <span>
-            {formatToNaira(calculateTotal() + shippingCost + taxAmount)}
+            {formatToNaira(calculateTotal() + deliveryCost + taxAmount)}
           </span>
         </div>
       </div>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import DeleteCartButton from "@/app/_components/DeleteCartButton";
 import QuantityButton from "@/app/_components/QuantityButton";
 import { Heart, ShoppingBag, ArrowRight } from "lucide-react";
@@ -104,7 +105,12 @@ export default async function CartPage() {
           <div className="lg:w-1/3">
             <div className="bg-white rounded-lg p-6 shadow-sm sticky top-4">
               <OrderSummary cartItems={cartItems} />
-              <Button className="w-full mt-6">Proceed to Checkout</Button>
+              <Link
+                href="/shipping"
+                className="w-full mt-6 p-2 rounded-md text-white bg-customGreen hover:scale-75"
+              >
+                Proceed to Shipping
+              </Link>
             </div>
           </div>
         </div>
