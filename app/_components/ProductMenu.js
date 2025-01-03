@@ -1,6 +1,6 @@
 "use client";
 
-import { FaCartPlus, FaHeart, FaInfoCircle } from "react-icons/fa";
+import { FaCartPlus, FaHeart } from "react-icons/fa";
 import { addToCart, addToSaved } from "../_lib/actions";
 import { toast } from "sonner";
 
@@ -51,7 +51,6 @@ function ProductMenu({ item }) {
         size={36}
         className="text-customGreen text-2xl"
       />
-      <FaInfoCircle size={36} className="text-customGreen text-2xl" />
     </>
   );
 }

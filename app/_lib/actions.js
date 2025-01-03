@@ -47,7 +47,7 @@ export async function addToCart(newItem) {
   }
 
   revalidatePath("/saved");
-  redirect("/cart");
+  // redirect("/cart");
 }
 export async function addToSaved(newItem) {
   const { error } = await supabase.from("saved").insert([newItem]);
@@ -57,9 +57,8 @@ export async function addToSaved(newItem) {
   }
 
   revalidatePath("/cart");
-  redirect("/saved");
 }
 
-// export async function signInAction() {
-//   await signIn("google", { redirectTo: "/" });
-// }
+export async function signInAction() {
+  await signIn("google", { redirectTo: "/" });
+}
