@@ -2,6 +2,10 @@ import { getBabiesProducts } from "../_lib/data-service";
 import DiscountProductGrid from "../_components/DiscountProductGrid";
 import { Search } from "lucide-react";
 
+export const metadata = {
+  title: "babies",
+};
+
 export const revalidate = 30;
 
 export default async function BabiesPage() {

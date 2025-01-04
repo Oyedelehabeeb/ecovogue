@@ -2,6 +2,10 @@ import { getWomenProducts } from "../_lib/data-service";
 import ProductGrid from "../_components/ProductGrid";
 import { Search } from "lucide-react";
 
+export const metadata = {
+  title: "women",
+};
+
 export const revalidate = 30;
 
 export default async function WomenPage() {

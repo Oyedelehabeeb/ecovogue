@@ -4,7 +4,6 @@ import Image from "next/image";
 export default function Page() {
   return (
     <div className="bg-gray-50">
-      {/* Hero Section */}
       <div className="relative h-[400px] bg-gradient-to-r from-customGreen to-green-600">
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-4">
           <h1 className="text-5xl font-bold mb-6 text-center">
@@ -16,7 +15,6 @@ export default function Page() {
         </div>
       </div>
 
-      {/* Our Story Section */}
       <section className="container mx-auto px-4 py-20">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="relative h-[500px] object-cover rounded-lg overflow-hidden">

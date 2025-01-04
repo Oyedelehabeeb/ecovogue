@@ -13,7 +13,7 @@ import {
 import ProductCard from "./_components/ProductCard";
 import Link from "next/link";
 
-export const revalidate = 30;
+export const revalidate = 20;
 
 export default async function Home() {
   const [categories, featured, trending, specials] = await Promise.all([
@@ -165,16 +165,8 @@ export default async function Home() {
             ))}
           </div>
         </section>
-        <section className="pt-6">
+        <section className="pt-6 bg-gradient-to-r from-customGreen to-green-600">
           <div className="relative w-full h-32 sm:h-64">
-            <div>
-              <Image
-                src={placeholder}
-                alt="cta-section"
-                className="object-cover"
-                fill
-              />
-            </div>
             <div className="absolute inset-0 flex flex-col items-center justify-center">
               <h2 className="text-white capitalize font-semibold text-2xl tracking-widest">
                 Committed to sustainable fashion
