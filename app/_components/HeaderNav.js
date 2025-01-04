@@ -4,18 +4,26 @@ import Link from "next/link";
 import { Bitter } from "next/font/google";
 import { usePathname } from "next/navigation";
 import { MdFavorite } from "react-icons/md";
-import { ShoppingCart, Search } from "lucide-react";
+import { ShoppingCart } from "lucide-react";
+import UserDetails from "./UserDetails";
 
 const bitter = Bitter({
   subsets: ["latin"],
   display: "swap",
 });
 
-export default function HeaderNav() {
+export default function HeaderNav({ session }) {
   const pathname = usePathname();
 
   return (
-    <div className="container mx-auto flex justify-between items-center px-4 py-4">
+    <div className="flex justify-between items-center px-4 py-4">
+      <Link
+        href="/"
+        className={`text-customGreen text-2xl ${bitter.className}`}
+      >
+        EcoVogue
+      </Link>
+
       <div className="flex items-center">
         <nav className="ml-8">
           <ul className="flex space-x-6">
@@ -70,27 +78,8 @@ export default function HeaderNav() {
           </ul>
         </nav>
       </div>
-      <div>
-        <Link href="/">
-          <h1
-            className={`${bitter.className} font-semibold text-customGreen text-xl sm:text-3xl`}
-          >
-            ECOVOGUE
-          </h1>
-        </Link>
-      </div>
-      <div className="flex items-center space-x-4">
-        <div className="relative">
-          <input
-            type="text"
-            placeholder="Search"
-            className="bg-gray-100 rounded-lg px-4 py-2 pr-8 w-64"
-          />
-          <button className="absolute right-2 top-1/2 transform -translate-y-1/2">
-            <Search className="h-5 w-5 text-gray-400" />
-          </button>
-        </div>
 
+      <div className="flex items-center space-x-4">
         <Link
           href="/saved"
           className={`rounded-lg px-4 py-2 flex items-center text-customGreen relative ${
@@ -113,6 +102,7 @@ export default function HeaderNav() {
           <ShoppingCart className="h-5 w-5 mr-2 text-customGreen" />
           Cart
         </Link>
+        <UserDetails session={session} />
       </div>
     </div>
   );
