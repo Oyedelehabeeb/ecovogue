@@ -1,6 +1,10 @@
 import trad from "@/public/trad-02.jpg";
 import Image from "next/image";
 
+export const metadata = {
+  title: "about",
+};
+
 export default function Page() {
   return (
     <div className="bg-gray-50">

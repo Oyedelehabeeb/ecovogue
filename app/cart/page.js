@@ -8,9 +8,13 @@ import { getCart } from "../_lib/data-service";
 import OrderSummary from "../_components/OrderSummary";
 import AddToSavedButton from "../_components/AddToSavedButton";
 
+export const metadata = {
+  title: "cart",
+};
+
 export const revalidate = 0;
 
-export default async function CartPage() {
+export default async function Page() {
   const cartItems = await getCart();
   const quantity = 1;
 

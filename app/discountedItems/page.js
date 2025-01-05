@@ -7,7 +7,7 @@ import DiscountProductGrid from "../_components/DiscountProductGrid";
 import { Search } from "lucide-react";
 
 export const metadata = {
-  title: "women",
+  title: "discounted-items",
 };
 
 export const revalidate = 30;

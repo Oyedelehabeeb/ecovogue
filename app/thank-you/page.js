@@ -3,6 +3,10 @@ import { CheckCircle2, Package } from "lucide-react";
 import OrderSummary from "../_components/OrderSummary";
 import { getCart } from "../_lib/data-service";
 
+export const metadata = {
+  title: "thank-you",
+};
+
 export const revalidate = 0;
 
 export default async function Page() {

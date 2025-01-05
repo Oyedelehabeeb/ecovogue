@@ -5,6 +5,10 @@ import { Heart, ShoppingBag } from "lucide-react";
 import DeleteSavedButton from "../_components/DeleteSavedButton";
 import AddToCartButton from "../_components/AddToCartButton";
 
+export const metadata = {
+  title: "saved",
+};
+
 export const revalidate = 0;
 
 export default async function SavedPage() {

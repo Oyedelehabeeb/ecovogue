@@ -3,6 +3,10 @@ import Link from "next/link";
 import OrderSummary from "../_components/OrderSummary";
 import { getCart } from "../_lib/data-service";
 
+export const metadata = {
+  title: "shipping-order",
+};
+
 export const revalidate = 0;
 
 export default async function ShippingPage() {
