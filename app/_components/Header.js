@@ -1,6 +1,5 @@
 import HeaderNav from "./HeaderNav";
 import TopNav from "./TopNav";
-import UserDetails from "./UserDetails";
 import { auth } from "../_lib/auth";
 
 export default async function Header() {
