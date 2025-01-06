@@ -26,29 +26,6 @@ export default async function BabiesPage() {
       </div>
 
       <div className="container mx-auto px-4 py-8">
-        <div className="flex flex-col md:flex-row justify-between items-center mb-8">
-          <div className="flex flex-wrap gap-4 items-center w-full md:w-auto mb-4 md:mb-0">
-            <div className="relative flex-1 md:flex-none md:w-64">
-              <input
-                type="search"
-                placeholder="Search products..."
-                className="bg-gray-100 rounded-lg px-4 py-2 pr-8 w-64 pl-10 border focus:outline-none focus:ring-2 focus:ring-customGreen"
-              />
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
-            </div>
-
-            <select className="px-4 py-2 border rounded-md bg-gray-100">
-              <option>Latest Arrivals</option>
-              <option>Price: Low to High</option>
-              <option>Price: High to Low</option>
-              <option>Most Popular</option>
-            </select>
-          </div>
-          <div className="text-sm text-gray-600">
-            {initialProducts.length} items found
-          </div>
-        </div>
-
         <DiscountProductGrid initialProducts={initialProducts} />
       </div>
     </div>

@@ -12,7 +12,7 @@ const bitter = Bitter({
   display: "swap",
 });
 
-export default function HeaderNav({ session }) {
+export default function HeaderNav() {
   const pathname = usePathname();
 
   return (
@@ -74,7 +74,7 @@ export default function HeaderNav({ session }) {
 
       <Link
         href="/"
-        className={`text-customGreen text-2xl sm:text-4xl uppercase font-semibold ${bitter.className}`}
+        className={`${bitter.className}  text-customGreen text-2xl sm:text-4xl uppercase font-semibold`}
       >
         Ecovogue
       </Link>
