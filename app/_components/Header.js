@@ -1,14 +1,11 @@
 import HeaderNav from "./HeaderNav";
 import TopNav from "./TopNav";
-import { auth } from "../_lib/auth";
 
 export default async function Header() {
-  const session = await auth();
-
   return (
     <header className="bg-white divide-y-2 divide-gray-100">
       <div className="container mx-auto">
-        <HeaderNav session={session} />
+        <HeaderNav />
       </div>
       <nav className="text-stone-700">
         <div className="container mx-auto">

@@ -13,7 +13,6 @@ export default async function BabiesPage() {
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      {/* Hero Section */}
       <div className="relative h-[300px] bg-gradient-to-r from-blue-300 to-purple-300">
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
           <div className="bg-white/20 px-6 py-2 rounded-full text-sm mb-4">
@@ -29,7 +28,6 @@ export default async function BabiesPage() {
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <div className="flex flex-wrap gap-4 items-center w-full md:w-auto mb-4 md:mb-0">
-            {/* Search Input */}
             <div className="relative flex-1 md:flex-none md:w-64">
               <input
                 type="search"
@@ -38,8 +36,6 @@ export default async function BabiesPage() {
               />
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
             </div>
-
-            {/* Filters */}
 
             <select className="px-4 py-2 border rounded-md bg-gray-100">
               <option>Latest Arrivals</option>
@@ -53,7 +49,6 @@ export default async function BabiesPage() {
           </div>
         </div>
 
-        {/* Product Grid */}
         <DiscountProductGrid initialProducts={initialProducts} />
       </div>
     </div>

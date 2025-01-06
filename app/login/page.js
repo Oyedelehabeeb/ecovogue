@@ -1,6 +1,11 @@
 import Link from "next/link";
 import SigninButton from "../_components/SigninButton";
 
+export const metadata = {
+  title: "Sign In",
+  description: "Sign in to your account",
+};
+
 export default function SignInPage() {
   return (
     <div className="min-h-screen bg-gray-50">

@@ -5,7 +5,7 @@ import { Bitter } from "next/font/google";
 import { usePathname } from "next/navigation";
 import { MdFavorite } from "react-icons/md";
 import { ShoppingCart } from "lucide-react";
-import UserDetails from "./UserDetails";
+import SignOutButton from "./SignoutButton";
 
 const bitter = Bitter({
   subsets: ["latin"],
@@ -17,13 +17,6 @@ export default function HeaderNav({ session }) {
 
   return (
     <div className="flex justify-between items-center px-4 py-4">
-      <Link
-        href="/"
-        className={`text-customGreen text-2xl ${bitter.className}`}
-      >
-        EcoVogue
-      </Link>
-
       <div className="flex items-center">
         <nav className="ml-8">
           <ul className="flex space-x-6">
@@ -79,6 +72,13 @@ export default function HeaderNav({ session }) {
         </nav>
       </div>
 
+      <Link
+        href="/"
+        className={`text-customGreen text-2xl sm:text-4xl uppercase font-semibold ${bitter.className}`}
+      >
+        Ecovogue
+      </Link>
+
       <div className="flex items-center space-x-4">
         <Link
           href="/saved"
@@ -102,7 +102,7 @@ export default function HeaderNav({ session }) {
           <ShoppingCart className="h-5 w-5 mr-2 text-customGreen" />
           Cart
         </Link>
-        <UserDetails session={session} />
+        <SignOutButton />
       </div>
     </div>
   );

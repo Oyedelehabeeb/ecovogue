@@ -117,7 +117,7 @@ export default function DiscountProductGrid({ initialProducts }) {
         {products.map((product) => (
           <div key={product.id} className="relative">
             <div className="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm z-10">
-              {formatToNaira(product.discountPercentage)}% OFF
+              {formatToNaira(product.discount)} OFF
             </div>
             <DiscountProductCard
               item={product}
@@ -127,7 +127,7 @@ export default function DiscountProductGrid({ initialProducts }) {
               price={product.price}
               rating={product.rating}
               discount={product.discount}
-              discountPercentage={product.discount}
+              // discount={product.discount}
             />
           </div>
         ))}

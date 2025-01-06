@@ -1,7 +1,7 @@
 "use server";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { signIn } from "./auth";
+import { signIn, signOut } from "./auth";
 import { supabase } from "./supabase";
 
 export async function updateCartItemQuantity(itemId, newQuantity) {
@@ -61,4 +61,8 @@ export async function addToSaved(newItem) {
 
 export async function signInAction() {
   await signIn("google", { redirectTo: "/" });
+}
+
+export async function signOutAction() {
+  await signOut({ redirectTo: "/login" });
 }
