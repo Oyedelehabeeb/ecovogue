@@ -1,7 +1,7 @@
 import HeaderNav from "./HeaderNav";
 import TopNav from "./TopNav";
 
-export default async function Header() {
+export default function Header() {
   return (
     <header className="bg-white divide-y-2 divide-gray-100">
       <div className="container mx-auto">
