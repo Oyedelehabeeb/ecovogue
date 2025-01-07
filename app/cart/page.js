@@ -86,7 +86,7 @@ export default async function Page() {
                         Size: {item.size}
                       </p>
                       <div className="flex items-center gap-4">
-                        <QuantityButton quantity={quantity} />
+                        <QuantityButton itemId={item.id} />
                         <p className="font-semibold">
                           {new Intl.NumberFormat("en-NG", {
                             style: "currency",
