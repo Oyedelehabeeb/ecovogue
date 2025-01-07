@@ -2,8 +2,10 @@
 
 import { useState, useEffect, useCallback } from "react";
 import DiscountProductCard from "./DiscountProductCard";
+import ProductOperations from "./ProductOperations";
 import Loader from "../loader";
 import { Search } from "lucide-react";
+import { useSearchParams } from "next/navigation";
 
 const PRODUCTS_PER_PAGE = 8;
 
@@ -25,6 +27,8 @@ export default function DiscountProductGrid({ initialProducts }) {
   const [hasMore, setHasMore] = useState(
     initialProducts.length > PRODUCTS_PER_PAGE
   );
+  const searchParams = useSearchParams();
+  const sortBy = searchParams.get("sortBy") || "price-asc";
 
   const handleSearch = (event) => {
     const term = event.target.value.toLowerCase();
@@ -41,6 +45,13 @@ export default function DiscountProductGrid({ initialProducts }) {
     setProducts(filtered.slice(0, PRODUCTS_PER_PAGE));
     setHasMore(filtered.length > PRODUCTS_PER_PAGE);
   };
+
+  // Sorting logic
+  const [field, direction] = sortBy.split("-");
+  const modifier = direction === "asc" ? 1 : -1;
+  const sortedProducts = [...products].sort(
+    (a, b) => (a[field] - b[field]) * modifier
+  );
 
   const loadMoreProducts = useCallback(async () => {
     if (loading || !hasMore) return;
@@ -101,12 +112,7 @@ export default function DiscountProductGrid({ initialProducts }) {
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
           </div>
 
-          <select className="px-4 py-2 border rounded-md bg-gray-100">
-            <option>Biggest Discounts</option>
-            <option>Price: Low to High</option>
-            <option>Price: High to Low</option>
-            <option>Most Popular</option>
-          </select>
+          <ProductOperations />
         </div>
         <div className="text-sm text-gray-600">
           {filteredProducts.length} items found
@@ -114,7 +120,7 @@ export default function DiscountProductGrid({ initialProducts }) {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {products.map((product) => (
+        {sortedProducts.map((product) => (
           <div key={product.id} className="relative">
             <div className="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm z-10">
               {formatToNaira(product.discount)} OFF
