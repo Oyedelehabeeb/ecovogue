@@ -1,14 +1,15 @@
 "use client";
 
-import React from "react";
-import Button from "../_components/Button";
 import { useCart } from "./CartContext";
 
 export default function OrderSummary({ cartItems }) {
-  const { quantity } = useCart();
+  const { quantities } = useCart();
 
   const calculateTotal = () => {
-    return cartItems.reduce((total, item) => total + item.price * quantity, 0);
+    return cartItems.reduce((total, item) => {
+      const itemQuantity = quantities[item.id] || 1;
+      return total + item.price * itemQuantity;
+    }, 0);
   };
 
   const formatToNaira = (amount) => {

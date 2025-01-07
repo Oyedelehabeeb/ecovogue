@@ -68,6 +68,7 @@ export default async function Home() {
                 <div key={index}>
                   <ProductCard
                     id={product.id}
+                    item={product}
                     productId={product.productId}
                     name={product.name}
                     imageUrl={product.imageUrl}
@@ -99,6 +100,7 @@ export default async function Home() {
                 <div key={index}>
                   <ProductCard
                     id={product.id}
+                    item={product}
                     productId={product.productId}
                     name={product.name}
                     imageUrl={product.imageUrl}
@@ -130,6 +132,7 @@ export default async function Home() {
                 <div key={index}>
                   <ProductCard
                     id={product.id}
+                    item={product}
                     productId={product.productId}
                     name={product.name}
                     imageUrl={product.imageUrl}

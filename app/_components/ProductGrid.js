@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import ProductCard from "./ProductCard";
 import Loader from "../loader";
 import { Search } from "lucide-react";
-import ProductOperations from "./ProductOperations";
+import ProductOperations from "./ProductOperation";
 import { useSearchParams } from "next/navigation";
 
 const PRODUCTS_PER_PAGE = 8;
@@ -105,7 +105,12 @@ export default function ProductGrid({ initialProducts }) {
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
           </div>
 
-          <ProductOperations />
+          <select className="px-4 py-2 border rounded-md bg-gray-100">
+            <option>Latest Arrivals</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+            <option>Most Popular</option>
+          </select>
         </div>
         <div className="text-sm text-gray-600">
           {filteredProducts.length} items found

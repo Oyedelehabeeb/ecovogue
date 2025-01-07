@@ -1,6 +1,5 @@
 import { getWomenProducts } from "../_lib/data-service";
 import ProductGrid from "../_components/ProductGrid";
-import { Search } from "lucide-react";
 
 export const metadata = {
   title: "women",
