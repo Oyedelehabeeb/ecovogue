@@ -48,7 +48,7 @@ export default async function Page({ params }) {
   }).format(product.price);
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-gray-50 py-8 mt-16">
       <div className="container mx-auto px-4">
         {/* Breadcrumb */}
         <nav className="flex items-center text-sm mb-8">
@@ -56,12 +56,6 @@ export default async function Page({ params }) {
             Home
           </Link>
           <ChevronRight className="h-4 w-4 mx-2 text-gray-400" />
-          <Link
-            href="/categories"
-            className="text-gray-500 hover:text-gray-900"
-          >
-            {product.category}
-          </Link>
           <ChevronRight className="h-4 w-4 mx-2 text-gray-400" />
           <span className="text-gray-900 font-medium">{product.name}</span>
         </nav>
@@ -118,16 +112,6 @@ export default async function Page({ params }) {
             <div className="flex space-x-4 mb-8">
               <AddToCartButton item={product} className="flex-1" />
               <AddToSavedButton item={product} className="w-12 h-12" />
-            </div>
-
-            {/* Product Features */}
-            <div className="border-t border-gray-200 pt-8">
-              <h3 className="text-lg font-semibold mb-4">Product Features</h3>
-              <ul className="list-disc list-inside space-y-2 text-gray-600">
-                {product.features?.map((feature, index) => (
-                  <li key={index}>{feature}</li>
-                ))}
-              </ul>
             </div>
           </div>
         </div>

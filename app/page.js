@@ -13,6 +13,9 @@ import {
 } from "./_lib/data-service";
 import ProductCard from "./_components/ProductCard";
 import Link from "next/link";
+import CategoriesPagination from "./_components/CategoriesPagination";
+import FeaturedPagination from "./_components/FeaturedPagination";
+import TrendingPagination from "./_components/TrendingPagination";
 
 export const revalidate = 20;
 
@@ -39,9 +42,7 @@ export default async function Home() {
               priority
             />
           </div>
-          {/* Background Image */}
 
-          {/* Content on Top of the Image */}
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8">
             <h1 className="text-4xl font-bold text-white mb-4 sm:text-5xl">
               Timeless Styles, Made for You
@@ -61,31 +62,7 @@ export default async function Home() {
             Shop from categories
           </h2>
 
-          <div className="relative flex items-center justify-center">
-            <button className="bg-stone-400 absolute left-0 z-10 rounded-full shadow-md p-2 hover:scale-110 transition">
-              <ChevronLeft size={30} className="text-white" />
-            </button>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-10">
-              {categories.map((product, index) => (
-                <div key={index}>
-                  <ProductCard
-                    id={product.id}
-                    item={product}
-                    productId={product.productId}
-                    name={product.name}
-                    imageUrl={product.imageUrl}
-                    price={product.price}
-                    rating={product.rating}
-                  />
-                </div>
-              ))}
-            </div>
-
-            <button className="bg-stone-400  absolute right-0 z-10  rounded-full shadow-md p-2 hover:scale-110 transition">
-              <ChevronRight size={30} className="text-white" />
-            </button>
-          </div>
+          <CategoriesPagination categories={categories} />
         </section>
         {/* Featured */}
         <section className="p-6 bg-white relative">
@@ -93,31 +70,7 @@ export default async function Home() {
             Featured Products
           </h2>
 
-          <div className="relative flex items-center justify-center">
-            <button className="bg-stone-400 absolute left-0 z-10  rounded-full shadow-md p-2 hover:scale-110 transition">
-              <ChevronLeft size={30} className="text-white" />
-            </button>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-10">
-              {featured.map((product, index) => (
-                <div key={index}>
-                  <ProductCard
-                    id={product.id}
-                    item={product}
-                    productId={product.productId}
-                    name={product.name}
-                    imageUrl={product.imageUrl}
-                    price={product.price}
-                    rating={product.rating}
-                  />
-                </div>
-              ))}
-            </div>
-
-            <button className="bg-stone-400 absolute right-0 z-10  rounded-full shadow-md p-2 hover:scale-110 transition">
-              <ChevronRight size={30} className="text-white" />
-            </button>
-          </div>
+          <FeaturedPagination featured={featured} />
         </section>
         {/* Trending picks */}
         <section className="p-6 bg-white relative">
@@ -125,31 +78,7 @@ export default async function Home() {
             Trending Products
           </h2>
 
-          <div className="relative flex items-center justify-center">
-            <button className="bg-stone-400 absolute left-0 z-10  rounded-full shadow-md p-2 hover:scale-110 transition">
-              <ChevronLeft size={30} className="text-white" />
-            </button>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-10">
-              {trending.map((product, index) => (
-                <div key={index}>
-                  <ProductCard
-                    id={product.id}
-                    item={product}
-                    productId={product.productId}
-                    name={product.name}
-                    imageUrl={product.imageUrl}
-                    price={product.price}
-                    rating={product.rating}
-                  />
-                </div>
-              ))}
-            </div>
-
-            <button className="bg-stone-400 absolute right-0 z-10  rounded-full shadow-md p-2 hover:scale-110 transition">
-              <ChevronRight size={30} className="text-white" />
-            </button>
-          </div>
+          <TrendingPagination trending={trending} />
         </section>
         {/* Special for you */}
         <section className="px-20 pb-6 bg-white relative">
