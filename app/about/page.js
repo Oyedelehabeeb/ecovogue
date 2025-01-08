@@ -1,5 +1,6 @@
 import trad from "@/public/trad-02.jpg";
 import Image from "next/image";
+import { Shield, Target, Zap } from "lucide-react";
 
 export const metadata = {
   title: "about",
@@ -10,15 +11,14 @@ export default function Page() {
     <div className="bg-gray-50">
       <div className="relative h-[400px] bg-gradient-to-r from-customGreen to-green-600">
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-4">
-          <h1 className="text-5xl font-bold mb-6 text-center">
+          <h1 className="text-5xl font-bold text-center">
             Our Journey to Sustainable Fashion
           </h1>
-          <p className="text-xl text-gray-100 max-w-2xl text-center">
+          <p className="text-xl text-gray-100 max-w-2xl text-center mt-6">
             Making style sustainable, one piece at a time
           </p>
         </div>
       </div>
-
       <section className="container mx-auto px-4 py-20">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="relative h-[500px] object-cover rounded-lg overflow-hidden">
@@ -44,21 +44,13 @@ export default function Page() {
           </div>
         </div>
       </section>
-
       {/* Values Section */}
       <section className="bg-green-50 py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16 text-customGreen">
-            Our Values
-          </h2>
-          <div className="grid md:grid-cols-3 gap-12">
+        <div className="container mx-auto px-4 py-20">
+          <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <div className="bg-customGreen/10 rounded-full p-6 w-20 h-20 mx-auto mb-6">
-                <img
-                  src="/icons/sustainable.svg"
-                  alt="Sustainability"
-                  className="w-full h-full"
-                />
+              <div className="bg-customGreen/10 rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                <Shield className="h-8 w-8 text-customGreen" />
               </div>
               <h3 className="text-xl font-semibold mb-4">Sustainability</h3>
               <p className="text-gray-600">
@@ -66,13 +58,10 @@ export default function Page() {
                 environmental impact.
               </p>
             </div>
+
             <div className="text-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <div className="bg-customGreen/10 rounded-full p-6 w-20 h-20 mx-auto mb-6">
-                <img
-                  src="/icons/ethical.svg"
-                  alt="Ethics"
-                  className="w-full h-full"
-                />
+              <div className="bg-customGreen/10 rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                <Target className="h-8 w-8 text-customGreen" />
               </div>
               <h3 className="text-xl font-semibold mb-4">Ethical Production</h3>
               <p className="text-gray-600">
@@ -80,13 +69,10 @@ export default function Page() {
                 supply chain.
               </p>
             </div>
+
             <div className="text-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
-              <div className="bg-customGreen/10 rounded-full p-6 w-20 h-20 mx-auto mb-6">
-                <img
-                  src="/icons/quality.svg"
-                  alt="Quality"
-                  className="w-full h-full"
-                />
+              <div className="bg-customGreen/10 rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+                <Zap className="h-8 w-8 text-customGreen" />
               </div>
               <h3 className="text-xl font-semibold mb-4">Quality First</h3>
               <p className="text-gray-600">
@@ -96,59 +82,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-
-      {/* Team Section */}
-      <section className="container mx-auto px-4 py-20">
-        <h2 className="text-4xl font-bold text-center mb-16 text-customGreen">
-          Our Leadership
-        </h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="text-center">
-            <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden">
-              <img
-                src="/team/ceo.jpg"
-                alt="CEO"
-                className="object-cover w-full h-full"
-              />
-            </div>
-            <h3 className="text-xl font-semibold mb-2">Sarah Johnson</h3>
-            <p className="text-customGreen mb-2">Chief Executive Officer</p>
-            <p className="text-gray-600">
-              Visionary leader with 15+ years in sustainable fashion
-            </p>
-          </div>
-          <div className="text-center">
-            <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden">
-              <img
-                src="/team/coo.jpg"
-                alt="COO"
-                className="object-cover w-full h-full"
-              />
-            </div>
-            <h3 className="text-xl font-semibold mb-2">Michael Chen</h3>
-            <p className="text-customGreen mb-2">Chief Operations Officer</p>
-            <p className="text-gray-600">
-              Operations expert specializing in ethical supply chains
-            </p>
-          </div>
-          <div className="text-center">
-            <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden">
-              <img
-                src="/team/creative.jpg"
-                alt="Creative Director"
-                className="object-cover w-full h-full"
-              />
-            </div>
-            <h3 className="text-xl font-semibold mb-2">Emma Rodriguez</h3>
-            <p className="text-customGreen mb-2">Creative Director</p>
-            <p className="text-gray-600">
-              Award-winning designer focused on sustainable fashion
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Impact Stats */}
+      ;{/* Impact Stats */}
       <section className="bg-customGreen/5 py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-16 text-customGreen">

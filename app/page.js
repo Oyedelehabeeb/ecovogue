@@ -1,8 +1,5 @@
-// import placeholderImage from "@/public/placeholder-image.png";
 import woman from "@/public/woman-01.png";
 import landingPageImage from "@/public/landing-page.jpg";
-import placeholder from "@/public/placeholder.png";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Button from "./_components/Button";
 import {
@@ -11,7 +8,6 @@ import {
   getSpecials,
   getTrending,
 } from "./_lib/data-service";
-import ProductCard from "./_components/ProductCard";
 import Link from "next/link";
 import CategoriesPagination from "./_components/CategoriesPagination";
 import FeaturedPagination from "./_components/FeaturedPagination";

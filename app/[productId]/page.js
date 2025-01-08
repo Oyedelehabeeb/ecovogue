@@ -56,7 +56,6 @@ export default async function Page({ params }) {
             Home
           </Link>
           <ChevronRight className="h-4 w-4 mx-2 text-gray-400" />
-          <ChevronRight className="h-4 w-4 mx-2 text-gray-400" />
           <span className="text-gray-900 font-medium">{product.name}</span>
         </nav>
 
