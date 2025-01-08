@@ -1,4 +1,5 @@
-import placeholderImage from "@/public/placeholder-image.png";
+// import placeholderImage from "@/public/placeholder-image.png";
+import woman from "@/public/woman-01.png";
 import landingPageImage from "@/public/landing-page.jpg";
 import placeholder from "@/public/placeholder.png";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -26,17 +27,19 @@ export default async function Home() {
   return (
     <>
       <div>
-        <div className="relative w-full h-screen">
+        <div className="">
+          <div className="relative w-full h-screen">
+            <Image
+              src={woman}
+              className="object-cover object-top w-full h-full"
+              placeholder="blur"
+              quality={80}
+              alt="Mountains and forests with two cabins"
+              fill
+              priority
+            />
+          </div>
           {/* Background Image */}
-          <Image
-            src={landingPageImage}
-            className="object-cover"
-            placeholder="blur"
-            quality={80}
-            alt="Mountains and forests with two cabins"
-            fill
-            priority
-          />
 
           {/* Content on Top of the Image */}
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8">

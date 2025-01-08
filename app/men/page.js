@@ -14,9 +14,9 @@ export default async function MenPage() {
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Hero Section */}
-      <div className="relative h-[300px] bg-gradient-to-r from-slate-800 to-gray-700">
+      <div className="relative h-[300px] bg-gradient-to-r from-slate-800 to-gray-700 mt-16">
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-          <div className="bg-white/20 px-6 py-2 rounded-full text-sm mb-4">
+          <div className="bg-white/20 px-6 py-2 rounded-full text-sm mb-6">
             MEN&apos;S COLLECTION
           </div>
           <h1 className="text-4xl font-bold mb-4">Style & Sophistication</h1>
