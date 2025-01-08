@@ -17,14 +17,14 @@ export default async function DiscountedItemsPage() {
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      <div className="relative h-[300px] bg-gradient-to-r from-red-600 to-orange-500">
+      <div className="relative h-[300px] bg-gradient-to-r from-red-600 to-orange-500 mt-16">
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-          <div className="bg-white/20 px-6 py-2 rounded-full text-sm mb-4">
+          <div className="bg-white/20 px-6 py-2 rounded-full text-sm mb-6">
             LIMITED TIME OFFER
           </div>
           <h1 className="text-4xl font-bold mb-4">Special Discounts</h1>
           <p className="text-lg text-gray-100 max-w-2xl text-center">
-            Get up to 70% off on selected items
+            Get up to 30% off on selected items
           </p>
         </div>
       </div>

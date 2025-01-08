@@ -92,7 +92,7 @@ export default function ProductGrid({ initialProducts }) {
 
   return (
     <div>
-      <div className="flex flex-col md:flex-row justify-between items-center mt-6">
+      <div className="flex flex-col md:flex-row justify-between items-center mt-4">
         <div className="flex flex-wrap gap-4 items-center w-full md:w-auto mb-4 md:mb-0">
           <div className="relative flex-1 md:flex-none md:w-64">
             <input

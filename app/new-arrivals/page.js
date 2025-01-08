@@ -13,16 +13,16 @@ export default async function Page() {
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      <div className="relative h-[300px] bg-gradient-to-r from-gray-900 to-gray-600 py-4">
+      <div className="relative h-[300px] bg-gradient-to-r from-gray-900 to-gray-600 mt-16">
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-          <h1 className="text-4xl font-bold">New Arrivals</h1>
+          <h1 className="text-4xl font-bold mb-6">New Arrivals</h1>
           <p className="text-lg text-gray-200 max-w-2xl text-center">
             Explore our latest fashion collections
           </p>
         </div>
       </div>
 
-      <div>
+      <div className="container mx-auto px-4 py-8">
         <ProductGrid initialProducts={initialProducts} />
       </div>
     </div>

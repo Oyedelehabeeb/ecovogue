@@ -12,11 +12,11 @@ export default async function Page() {
   const initialProducts = await getAllProducts();
 
   return (
-    <div className="bg-gray-50 min-h-screen mt-10">
-      <div className="relative h-[300px] bg-gradient-to-r from-amber-600 to-yellow-500 mt-10">
+    <div className="bg-gray-50 min-h-screen">
+      <div className="relative h-[300px] bg-gradient-to-r from-amber-600 to-yellow-500 mt-16">
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-          <h1 className="text-4xl font-bold mb-4">Our Bestsellers</h1>
-          <p className="text-lg text-gray-100 max-w-2xl text-center">
+          <h1 className="text-4xl font-bold mb-6">Our Bestsellers</h1>
+          <p className="text-lg text-gray-100 max-w-2xl text-center mb-4">
             Discover what everyone loves
           </p>
           <div className="mt-4 flex space-x-4">
