@@ -92,7 +92,7 @@ export default function ProductGrid({ initialProducts }) {
 
   return (
     <div>
-      <div className="flex flex-col md:flex-row justify-between items-center mb-8">
+      <div className="flex flex-col md:flex-row justify-between items-center mt-6">
         <div className="flex flex-wrap gap-4 items-center w-full md:w-auto mb-4 md:mb-0">
           <div className="relative flex-1 md:flex-none md:w-64">
             <input
@@ -112,7 +112,7 @@ export default function ProductGrid({ initialProducts }) {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">
         {sortedProducts.map((product) => (
           <ProductCard
             item={product}

@@ -14,7 +14,7 @@ export default async function WomenPage() {
     <div className="bg-gray-50 min-h-screen">
       <div className="relative h-[300px] bg-gradient-to-r from-pink-400 to-rose-300 mt-16">
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-          <div className="bg-white/20 px-6 py-2 rounded-full text-sm mb-4">
+          <div className="bg-white/20 px-6 py-2 rounded-full text-sm mb-6">
             WOMEN&apos;S COLLECTION
           </div>
           <h1 className="text-4xl font-bold mb-4">Elegance Redefined</h1>
