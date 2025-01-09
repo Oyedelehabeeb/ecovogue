@@ -1,5 +1,7 @@
-import { getWomenProducts } from "../_lib/data-service";
 import ProductGrid from "../_components/ProductGrid";
+import Spinner from "../_components/Spinner";
+import { Suspense } from "react";
+import { getWomenProducts } from "../_lib/data-service";
 
 export const metadata = {
   title: "women",
@@ -24,9 +26,11 @@ export default async function WomenPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-8">
-        <ProductGrid initialProducts={initialProducts} />
-      </div>
+      <Suspense fallback={<Spinner />} key={initialProducts.ProductId}>
+        <div className="container mx-auto px-4 py-8">
+          <ProductGrid initialProducts={initialProducts} />
+        </div>
+      </Suspense>
     </div>
   );
 }

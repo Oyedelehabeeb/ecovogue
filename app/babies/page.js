@@ -1,5 +1,7 @@
 import { getBabiesProducts } from "../_lib/data-service";
 import DiscountProductGrid from "../_components/DiscountProductGrid";
+import Spinner from "../_components/Spinner";
+import { Suspense } from "react";
 import Image from "next/image";
 import baby from "@/public/baby-01.png";
 
@@ -26,9 +28,11 @@ export default async function BabiesPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-8">
-        <DiscountProductGrid initialProducts={initialProducts} />
-      </div>
+      <Suspense fallback={<Spinner />} key={initialProducts.productId}>
+        <div className="container mx-auto px-4 py-8">
+          <DiscountProductGrid initialProducts={initialProducts} />
+        </div>
+      </Suspense>
     </div>
   );
 }

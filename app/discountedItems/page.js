@@ -5,6 +5,8 @@ import ProductCard from "../_components/ProductCard";
 import { getDiscountedItems } from "../_lib/data-service";
 import DiscountProductGrid from "../_components/DiscountProductGrid";
 import { Search } from "lucide-react";
+import Spinner from "../_components/Spinner";
+import { Suspense } from "react";
 
 export const metadata = {
   title: "discounted-items",
@@ -29,9 +31,11 @@ export default async function DiscountedItemsPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-8">
-        <DiscountProductGrid initialProducts={discountedItems} />
-      </div>
+      <Suspense fallback={<Spinner />} key={discountedItems.productId}>
+        <div className="container mx-auto px-4 py-8">
+          <DiscountProductGrid initialProducts={discountedItems} />
+        </div>
+      </Suspense>
     </div>
   );
 }

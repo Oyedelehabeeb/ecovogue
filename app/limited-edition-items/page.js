@@ -1,6 +1,8 @@
 import { getAllProducts } from "../_lib/data-service";
 import ProductGrid from "../_components/ProductGrid";
 import { Search } from "lucide-react";
+import Spinner from "../_components/Spinner";
+import { Suspense } from "react";
 
 export const metadata = {
   title: "limited-edition-items",
@@ -23,9 +25,11 @@ export default async function Page() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-8">
-        <ProductGrid initialProducts={initialProducts} />
-      </div>
+      <Suspense fallback={<Spinner />} key={initialProducts.productId}>
+        <div className="container mx-auto px-4 py-8">
+          <ProductGrid initialProducts={initialProducts} />
+        </div>
+      </Suspense>
     </div>
   );
 }
