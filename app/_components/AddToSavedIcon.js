@@ -33,4 +33,4 @@ function AddToSavedIcon({ item }) {
   );
 }
 
-export default AddToSavedButton;
+export default AddToSavedIcon;

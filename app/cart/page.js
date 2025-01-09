@@ -6,7 +6,7 @@ import Image from "next/image";
 import Button from "../_components/Button";
 import { getCart } from "../_lib/data-service";
 import OrderSummary from "../_components/OrderSummary";
-import AddToSavedButton from "../_components/AddToSavedButton";
+import AddToSavedIcon from "../_components/AddToSavedIcon";
 
 export const metadata = {
   title: "cart",
@@ -95,9 +95,9 @@ export default async function Page() {
                         </p>
                       </div>
                     </div>
-                    <div className="flex flex-col gap-2">
+                    <div className="flex flex-col justify-end gap-2">
                       <DeleteCartButton itemId={item.id} />
-                      <AddToSavedButton item={item} />
+                      <AddToSavedIcon item={item} />
                     </div>
                   </div>
                 </div>
@@ -107,11 +107,11 @@ export default async function Page() {
 
           {/* Order Summary */}
           <div className="lg:w-1/3">
-            <div className="bg-white rounded-lg p-6 shadow-sm sticky top-4">
+            <div className="bg-white rounded-lg p-6 shadow-md sticky top-4">
               <OrderSummary cartItems={cartItems} />
               <Link
                 href="/shipping"
-                className="w-full mt-6 p-2 rounded-md text-white bg-customGreen hover:scale-75"
+                className="w-full mt-8 p-2 rounded-md text-white bg-customGreen hover:scale-75"
               >
                 Proceed to Shipping
               </Link>
