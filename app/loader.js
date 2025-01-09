@@ -1,7 +1,5 @@
+import SpinnerMini from "./_components/SpinnerMini";
+
 export default function loader() {
-  return (
-    <div>
-      <h2>Loading...</h2>
-    </div>
-  );
+  return <SpinnerMini />;
 }
