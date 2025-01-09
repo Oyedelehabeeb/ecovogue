@@ -61,7 +61,7 @@ export default async function Home() {
           <CategoriesPagination categories={categories} />
         </section>
         {/* Featured */}
-        <section className="p-6 bg-white relative">
+        <section className="p-4 bg-white relative">
           <h2 className="text-2xl font-bold text-center mb-3 capitalize">
             Featured Products
           </h2>
@@ -69,7 +69,7 @@ export default async function Home() {
           <FeaturedPagination featured={featured} />
         </section>
         {/* Trending picks */}
-        <section className="p-6 bg-white relative">
+        <section className="p-4 bg-white relative">
           <h2 className="text-2xl font-bold text-center mb-3 capitalize">
             Trending Products
           </h2>
