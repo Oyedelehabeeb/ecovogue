@@ -4,6 +4,7 @@ import AddToSavedButton from "../_components/AddToSavedButton";
 import { getAllProducts, getAllProductsById } from "../_lib/data-service";
 import { ChevronRight, Truck, Shield, RefreshCw } from "lucide-react";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 export const revalidate = 30;
 
@@ -20,7 +21,7 @@ export default async function Page({ params }) {
   const product = await getAllProductsById(params.productId);
 
   if (!product) {
-    return <div>Product not found</div>;
+    notFound();
   }
 
   const renderStars = (rating) => {
