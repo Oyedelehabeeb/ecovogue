@@ -2,6 +2,9 @@ import { ArrowRight, ChevronLeft, ShoppingBag } from "lucide-react";
 import Link from "next/link";
 import OrderSummary from "../_components/OrderSummary";
 import { getCart } from "../_lib/data-service";
+import { auth } from "@/app/_lib/auth";
+import { updateUserDetails } from "@/app/_lib/actions";
+import Button from "@/app/_components/Button";
 
 export const metadata = {
   title: "shipping-order",
@@ -11,6 +14,9 @@ export const revalidate = 0;
 
 export default async function ShippingPage() {
   const cartItems = await getCart();
+  const session = await auth();
+  const fullname = session?.user?.name;
+  const email = session?.user?.email;
 
   if (!cartItems || cartItems.length === 0) {
     return (
@@ -60,18 +66,23 @@ export default async function ShippingPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Shipping Form */}
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-lg shadow-sm p-6">
-              <h2 className="text-2xl font-semibold mb-6">Shipping Details</h2>
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <form action={updateUserDetails} className="space-y-6">
+              <div className="bg-white rounded-lg shadow-sm p-6">
+                <h2 className="text-2xl font-semibold mb-6">
+                  Shipping Details
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Full Name
                     </label>
                     <input
                       type="text"
+                      name="fullname"
+                      defaultValue={fullname}
                       required
                       className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-customGreen"
+                      disabled
                     />
                   </div>
                   <div>
@@ -80,88 +91,88 @@ export default async function ShippingPage() {
                     </label>
                     <input
                       type="email"
+                      name="email"
+                      defaultValue={email}
                       required
                       className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-customGreen"
+                      disabled
                     />
                   </div>
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                <div className="mt-4 space-y-2">
+                  <label className="block text-sm font-medium text-gray-700">
                     Phone Number
                   </label>
                   <input
                     type="tel"
+                    name="phone"
                     required
                     className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-customGreen"
                   />
                 </div>
 
-                <div>
+                <div className="mt-4 space-y-2">
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Address
                   </label>
                   <input
                     type="text"
+                    name="address"
                     required
                     className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-customGreen"
                   />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div>
+                  <div className="mt-4 space-y-2">
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       City
                     </label>
                     <input
                       type="text"
+                      name="city"
                       required
                       className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-customGreen"
                     />
                   </div>
-                  <div>
+                  <div className="mt-4 space-y-2">
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       State
                     </label>
-                    <select
+                    <input
+                      type="text"
+                      name="state"
                       required
                       className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-customGreen"
-                    >
-                      <option value="">Select State</option>
-                      <option value="lagos">Lagos</option>
-                      <option value="abuja">Abuja</option>
-                      <option value="rivers">Rivers</option>
-                    </select>
+                    />
                   </div>
-                  <div>
+                  <div className="mt-4 space-y-2">
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       ZIP Code
                     </label>
                     <input
                       type="text"
+                      name="zip"
                       required
                       className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-customGreen"
                     />
                   </div>
                 </div>
-              </form>
-            </div>
-
-            <div className="flex justify-between mt-6">
-              <Link
-                href="/cart"
-                className="flex items-center text-gray-600 hover:text-gray-800"
-              >
-                <ChevronLeft className="h-5 w-5 mr-1" />
-                Back to Cart
-              </Link>
-              <Link
-                href="/payment"
-                className="bg-customGreen text-white px-6 py-2 rounded-md hover:bg-customGreen/90"
-              >
-                Continue to Payment
-              </Link>
-            </div>
+              </div>
+              <div className="flex justify-between mt-6">
+                <Link
+                  href="/cart"
+                  className="flex items-center text-gray-600 hover:text-gray-800"
+                >
+                  <ChevronLeft className="h-5 w-5 mr-1" />
+                  Back to Cart
+                </Link>
+                <Button className="bg-customGreen text-white px-6 py-2 rounded-md hover:bg-customGreen/90">
+                  Proceed to complete shipping
+                </Button>
+              </div>
+            </form>
           </div>
 
           {/* Order Summary */}

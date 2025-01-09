@@ -3,6 +3,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { signIn, signOut } from "./auth";
 import { supabase } from "./supabase";
+import { auth } from "@/app/_lib/auth";
 
 export async function updateCartItemQuantity(itemId, newQuantity) {
   const { data, error } = await supabase
@@ -57,6 +58,32 @@ export async function addToSaved(newItem) {
   }
 
   revalidatePath("/cart");
+}
+
+export async function updateUserDetails(formData) {
+  const session = await auth();
+  if (!session) throw new Error("You must be logged in");
+
+  const newShippingDetails = {
+    fullname: formData.get("fullname"),
+    email: formData.get("email"),
+    address: formData.get("address"),
+    city: formData.get("city"),
+    state: formData.get("state"),
+    zip: formData.get("zip"),
+  };
+
+  console.log(newShippingDetails);
+
+  const { error } = await supabase
+    .from("shipping")
+    .insert([newShippingDetails]);
+
+  if (error) throw new Error("Shipping could not be completed");
+
+  revalidatePath("/shipping");
+
+  redirect("/thank-you");
 }
 
 export async function signInAction() {

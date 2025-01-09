@@ -111,7 +111,7 @@ export default async function Page() {
               <OrderSummary cartItems={cartItems} />
               <Link
                 href="/shipping"
-                className="w-full mt-8 p-2 rounded-md text-white bg-customGreen hover:scale-75"
+                className="bg-customGreen text-white px-6 py-2 rounded-md hover:bg-customGreen/90"
               >
                 Proceed to Shipping
               </Link>
