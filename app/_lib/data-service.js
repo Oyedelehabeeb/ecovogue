@@ -45,8 +45,11 @@ export async function getSpecials() {
   return data;
 }
 
-export async function getCart() {
-  const { data, error } = await supabase.from("cart").select("*");
+export async function getCart(email) {
+  const { data, error } = await supabase
+    .from("cart")
+    .select("*")
+    .eq("email", email);
 
   if (error) {
     console.error(error);
@@ -56,8 +59,11 @@ export async function getCart() {
   return data;
 }
 
-export async function getSaved() {
-  const { data, error } = await supabase.from("saved").select("*");
+export async function getSaved(email) {
+  const { data, error } = await supabase
+    .from("saved")
+    .select("*")
+    .eq("email", email);
 
   if (error) {
     console.error(error);

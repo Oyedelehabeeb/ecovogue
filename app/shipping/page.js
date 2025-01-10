@@ -13,10 +13,10 @@ export const metadata = {
 export const revalidate = 0;
 
 export default async function ShippingPage() {
-  const cartItems = await getCart();
   const session = await auth();
-  const fullname = session?.user?.name;
   const email = session?.user?.email;
+  const cartItems = await getCart(email);
+  const fullname = session?.user?.name;
 
   if (!cartItems || cartItems.length === 0) {
     return (

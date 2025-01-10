@@ -7,6 +7,7 @@ import Button from "../_components/Button";
 import { getCart } from "../_lib/data-service";
 import OrderSummary from "../_components/OrderSummary";
 import AddToSavedIcon from "../_components/AddToSavedIcon";
+import { auth } from "../_lib/auth";
 
 export const metadata = {
   title: "cart",
@@ -15,7 +16,10 @@ export const metadata = {
 export const revalidate = 0;
 
 export default async function Page() {
-  const cartItems = await getCart();
+  const session = await auth();
+  const useremail = session?.user.email;
+  const cartItems = await getCart(session?.user.email);
+
   const quantity = 1;
 
   if (!cartItems || cartItems.length === 0) {
@@ -97,7 +101,7 @@ export default async function Page() {
                     </div>
                     <div className="flex flex-col justify-end gap-2">
                       <DeleteCartButton itemId={item.id} />
-                      <AddToSavedIcon item={item} />
+                      <AddToSavedIcon item={item} useremail={useremail} />
                     </div>
                   </div>
                 </div>

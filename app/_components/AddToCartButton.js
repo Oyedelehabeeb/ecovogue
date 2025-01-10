@@ -5,12 +5,13 @@ import Button from "./Button";
 import { addToCart } from "../_lib/actions";
 import { toast } from "sonner";
 
-function AddToCartButton({ item }) {
+function AddToCartButton({ item, useremail }) {
   async function handleAddToCart() {
     try {
       await addToCart({
         productId: item.productId,
         name: item.name,
+        email: useremail,
         size: item.size,
         color: item.color,
         price: item.price,

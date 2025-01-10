@@ -5,11 +5,12 @@ import { addToSaved } from "../_lib/actions";
 import { MdFavorite } from "react-icons/md";
 import { toast } from "sonner";
 
-function AddToSavedIcon({ item }) {
+function AddToSavedIcon({ item, useremail }) {
   async function handleAddToSaved() {
     try {
       await addToSaved({
         productId: item.productId,
+        email: useremail,
         name: item.name,
         size: item.size,
         color: item.color,

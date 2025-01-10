@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getSaved } from "../_lib/data-service";
 import { Heart, ShoppingBag } from "lucide-react";
+import { auth } from "@/app/_lib/auth";
 import DeleteSavedButton from "../_components/DeleteSavedButton";
 import AddToCartButton from "../_components/AddToCartButton";
 
@@ -12,7 +13,9 @@ export const metadata = {
 export const revalidate = 0;
 
 export default async function SavedPage() {
-  const savedItems = await getSaved();
+  const session = await auth();
+  const email = session?.user.email;
+  const savedItems = await getSaved(email);
 
   if (!savedItems || savedItems.length === 0) {
     return (
@@ -65,7 +68,7 @@ export default async function SavedPage() {
 
               <div className="flex justify-between items-center">
                 <AddToCartButton item={item} />
-                <DeleteSavedButton item={item} />
+                <DeleteSavedButton itemId={item.id} />
               </div>
             </div>
           ))}

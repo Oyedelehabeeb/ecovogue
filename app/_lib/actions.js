@@ -65,8 +65,8 @@ export async function updateUserDetails(formData) {
   if (!session) throw new Error("You must be logged in");
 
   const newShippingDetails = {
-    fullname: formData.get("fullname"),
-    email: formData.get("email"),
+    fullname: session?.user?.name,
+    email: session?.user?.email,
     address: formData.get("address"),
     city: formData.get("city"),
     state: formData.get("state"),

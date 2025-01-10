@@ -5,6 +5,7 @@ import { getAllProducts, getAllProductsById } from "../_lib/data-service";
 import { ChevronRight, Truck, Shield, RefreshCw } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { auth } from "../_lib/auth";
 
 export const revalidate = 30;
 
@@ -19,6 +20,8 @@ export async function generateStaticParams() {
 
 export default async function Page({ params }) {
   const product = await getAllProductsById(params.productId);
+  const session = await auth();
+  const useremail = session?.user.email;
 
   if (!product) {
     notFound();
@@ -110,8 +113,16 @@ export default async function Page({ params }) {
             </div>
 
             <div className="flex space-x-4 mb-8">
-              <AddToCartButton item={product} className="flex-1" />
-              <AddToSavedButton item={product} className="w-12 h-12" />
+              <AddToCartButton
+                item={product}
+                useremail={useremail}
+                className="flex-1"
+              />
+              <AddToSavedButton
+                item={product}
+                useremail={useremail}
+                className="w-12 h-12"
+              />
             </div>
           </div>
         </div>

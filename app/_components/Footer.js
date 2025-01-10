@@ -5,7 +5,7 @@ import { IoLogoFacebook } from "react-icons/io";
 import { CiInstagram } from "react-icons/ci";
 function Footer() {
   return (
-    <footer className="bg-gray-100 text-gray-800 px-6 py-8">
+    <footer className="bg-gray-100 text-gray-800 px-6 py-8 h-[400px]">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* Help Centre */}
         <div>
