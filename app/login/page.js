@@ -24,15 +24,6 @@ export default function SignInPage() {
             <div>
               <SigninButton />
             </div>
-            <p className="mt-8 text-center text-sm text-gray-600">
-              Don&apos;t have an account?{" "}
-              <Link
-                href="/signup"
-                className="font-medium text-customGreen hover:text-customGreen/80"
-              >
-                Sign up
-              </Link>
-            </p>
           </div>
         </div>
 

@@ -13,8 +13,13 @@ export default function DeleteCartButton({ itemId }) {
       toast.error("Failed to remove item from cart");
     }
   }
+
+  function handleClick() {
+    confirm("Are you sure you want to delete item?") && handleDelete();
+  }
+
   return (
-    <button onClick={handleDelete} className="text-red-500 hover:text-red-700">
+    <button onClick={handleClick} className="text-red-500 hover:text-red-700">
       <Trash2 size={20} />
     </button>
   );

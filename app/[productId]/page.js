@@ -18,9 +18,10 @@ export async function generateStaticParams() {
   return productsId;
 }
 
-export const metadata = {
-  title: getAllProductsById.name.slice(0, 10),
-};
+export async function generateMetadata({ params }) {
+  const { name } = await getAllProductsById(params.productId);
+  return { title: `${name}` };
+}
 
 export default async function Page({ params }) {
   const product = await getAllProductsById(params.productId);
