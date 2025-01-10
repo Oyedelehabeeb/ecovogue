@@ -1,14 +1,24 @@
 // import { NextResponse } from "next/server";
 import { auth } from "./app/_lib/auth";
 
-// export function middleware(request) {
-//   console.log(request);
-
-//   return NextResponse.redirect(new URL("/about", request.url));
-// }
-
 export const middleware = auth;
 
 export const config = {
-  matcher: ["/"],
+  matcher: [
+    "/",
+    "/about",
+    "/men",
+    "/women",
+    "/babies",
+    "/cart",
+    "/saved",
+    "/bestseller",
+    "/discountedItems",
+    "/limited-edition-items",
+    "/new-arrivals",
+    "/on-sale",
+    "/shipping",
+    "/thank-you",
+    "/winter-essentials",
+  ],
 };
