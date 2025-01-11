@@ -1,7 +1,11 @@
 import { FaStar, FaStarHalf } from "react-icons/fa";
 import AddToCartButton from "../_components/AddToCartButton";
 import AddToSavedButton from "../_components/AddToSavedButton";
-import { getAllProducts, getAllProductsById } from "../_lib/data-service";
+import {
+  getAllProducts,
+  getAllProductsById,
+  getCart,
+} from "../_lib/data-service";
 import { ChevronRight, Truck, Shield, RefreshCw } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";

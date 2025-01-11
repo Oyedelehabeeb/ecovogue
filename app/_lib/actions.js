@@ -62,26 +62,44 @@ export async function addToSaved(newItem) {
 
 export async function updateUserDetails(formData) {
   const session = await auth();
-  if (!session) throw new Error("You must be logged in");
+  if (!session?.user?.email) {
+    throw new Error("You must be logged in");
+  }
+
+  const requiredFields = ["phone", "address", "city", "state", "zip"];
+  for (const field of requiredFields) {
+    if (!formData.get(field)) {
+      throw new Error(`${field} is required`);
+    }
+  }
 
   const newShippingDetails = {
-    fullname: session?.user?.name,
-    email: session?.user?.email,
-    phone: Number(formData.get("phone")) || null,
+    fullname: session.user.name,
+    email: session.user.email,
+    phone: Number(formData.get("phone")),
     address: formData.get("address").slice(0, 200),
     city: formData.get("city"),
     state: formData.get("state"),
     zip: formData.get("zip"),
+    created_at: new Date().toISOString(),
   };
 
-  const { error } = await supabase
+  const { error: shippingError } = await supabase
     .from("shipping")
     .insert([newShippingDetails]);
 
-  if (error) throw new Error("Shipping could not be completed");
+  if (shippingError) {
+    throw new Error("Failed to save shipping details");
+  }
 
-  revalidatePath("/shipping");
+  const { error: cartError } = await supabase
+    .from("cart")
+    .delete()
+    .eq("email", session.user.email);
 
+  if (cartError) {
+    throw new Error("Failed to clear cart items");
+  }
   redirect("/thank-you");
 }
 

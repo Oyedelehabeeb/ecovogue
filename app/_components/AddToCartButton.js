@@ -4,6 +4,7 @@ import { ShoppingCart } from "lucide-react";
 import Button from "./Button";
 import { addToCart } from "../_lib/actions";
 import { toast } from "sonner";
+import { useCart } from "./CartContext";
 
 function AddToCartButton({ item, useremail }) {
   async function handleAddToCart() {
@@ -15,6 +16,7 @@ function AddToCartButton({ item, useremail }) {
         size: item.size,
         color: item.color,
         price: item.price,
+        order: Math.random().toString(36).substring(7).toUpperCase(),
         imageUrl: item.imageUrl,
       });
       toast.success("Item added to cart");

@@ -14,6 +14,7 @@ export default async function Page() {
   const session = await auth();
   const email = session?.user.email;
   const cartItems = await getCart(email);
+  // const { order: orderNumber, totalAmount } = cartItems;
   const orderNumber = Math.random().toString(36).substring(7).toUpperCase();
   const estimatedDelivery = new Date(
     Date.now() + 7 * 24 * 60 * 60 * 1000
@@ -71,10 +72,10 @@ export default async function Page() {
           </div>
 
           {/* Order Summary */}
-          <div className="bg-white rounded-lg shadow-sm p-6 mb-8">
+          {/* <div className="bg-white rounded-lg shadow-sm p-6 mb-8">
             <h2 className="text-xl font-semibold mb-4">Order Summary</h2>
             <OrderSummary cartItems={cartItems} />
-          </div>
+          </div> */}
 
           {/* Actions */}
           <div className="text-center">

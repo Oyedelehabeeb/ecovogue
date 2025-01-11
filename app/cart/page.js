@@ -101,7 +101,11 @@ export default async function Page() {
                     </div>
                     <div className="flex flex-col justify-end gap-2">
                       <DeleteCartButton itemId={item.id} />
-                      <AddToSavedIcon item={item} useremail={useremail} />
+                      <AddToSavedIcon
+                        item={item}
+                        useremail={useremail}
+                        cartItems={cartItems}
+                      />
                     </div>
                   </div>
                 </div>
