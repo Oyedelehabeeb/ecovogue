@@ -71,7 +71,7 @@ function Footer() {
             placeholder="Enter email address"
             className="border border-gray-400 p-2 rounded-l w-full max-w-xs"
           />
-          <button className="bg-green-900 text-white px-4 py-2 rounded-r">
+          <button className="bg-customGreen text-white px-4 py-2 rounded-r">
             Submit
           </button>
         </div>
@@ -81,23 +81,23 @@ function Footer() {
       <div className="flex justify-center md:justify-end space-x-4 mt-[-30px]">
         <FaLinkedin
           size={24}
-          className="text-gray-700 hover:text-green-900 cursor-pointer"
+          className="text-customGreen hover:text-yellow-400 cursor-pointer"
         />
         <FaXTwitter
           size={24}
-          className="text-gray-700 hover:text-green-900 cursor-pointer"
+          className="text-customGreen hover:text-yellow-400 cursor-pointer"
         />
         <FaTiktok
           size={24}
-          className="text-gray-700 hover:text-green-900 cursor-pointer"
+          className="text-customGreen hover:text-yellow-400 cursor-pointer"
         />
         <IoLogoFacebook
           size={24}
-          className="text-gray-700 hover:text-green-900 cursor-pointer"
+          className="text-customGreen hover:text-yellow-400 cursor-pointer"
         />
         <CiInstagram
           size={24}
-          className="text-gray-700 hover:text-green-900 cursor-pointer"
+          className="text-customGreen hover:text-yellow-400 cursor-pointer"
         />
       </div>
     </footer>

@@ -67,6 +67,7 @@ export async function updateUserDetails(formData) {
   const newShippingDetails = {
     fullname: session?.user?.name,
     email: session?.user?.email,
+    phone: Number(formData.get("phone")) || null,
     address: formData.get("address").slice(0, 200),
     city: formData.get("city"),
     state: formData.get("state"),
