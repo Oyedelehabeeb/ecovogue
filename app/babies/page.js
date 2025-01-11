@@ -2,8 +2,6 @@ import { getBabiesProducts } from "../_lib/data-service";
 import DiscountProductGrid from "../_components/DiscountProductGrid";
 import Spinner from "../_components/Spinner";
 import { Suspense } from "react";
-import Image from "next/image";
-import baby from "@/public/baby-01.png";
 
 export const metadata = {
   title: "babies",

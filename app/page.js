@@ -1,5 +1,4 @@
-import woman from "@/public/woman-01.png";
-import landingPageImage from "@/public/landing-page.jpg";
+import frontpage from "@/public/frontpage.png";
 import Image from "next/image";
 import Button from "./_components/Button";
 import {
@@ -31,7 +30,7 @@ export default async function Home() {
         <div className="">
           <div className="relative w-full h-screen">
             <Image
-              src={woman}
+              src={frontpage}
               className="object-cover object-top w-full h-full"
               placeholder="blur"
               quality={80}
