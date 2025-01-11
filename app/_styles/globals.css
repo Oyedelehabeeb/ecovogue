@@ -8,7 +8,7 @@
     width: 60px;
     aspect-ratio: 1;
     border-radius: 50%;
-    border: 8px solid theme("colors.primary.900");
+    border: 8px solid #1b3220;
     border-right-color: theme("colors.primary.50");
     animation: rotate 1s infinite linear;
   }
@@ -18,7 +18,7 @@
     width: 20px;
     aspect-ratio: 1;
     border-radius: 50%;
-    border: 2px solid theme("colors.primary.900");
+    border: 2px solid #1b3220;
     border-right-color: transparent;
     animation: rotate 1s infinite linear;
   }
