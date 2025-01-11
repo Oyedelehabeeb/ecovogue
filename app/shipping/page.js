@@ -169,7 +169,7 @@ export default async function ShippingPage() {
                   Back to Cart
                 </Link>
                 <Button className="bg-customGreen text-white px-6 py-2 rounded-md hover:bg-customGreen/90">
-                  Proceed to complete shipping
+                  Complete shipping
                 </Button>
               </div>
             </form>

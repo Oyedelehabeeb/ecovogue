@@ -11,7 +11,7 @@ export default function SignoutButton() {
   return (
     <button
       onClick={handleSignOut}
-      className="text-sm text-customGreen px-4 py-2 rounded-md flex items-center gap-2"
+      className="text-customGreen text-sm sm:text-base px-4 py-2 rounded-md flex items-center gap-2"
     >
       <LogOut className="h-4 w-4" />
       Sign Out

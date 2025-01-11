@@ -6,6 +6,7 @@ import { ChevronRight, Truck, Shield, RefreshCw } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { auth } from "../_lib/auth";
+import Image from "next/image";
 
 export const revalidate = 30;
 
@@ -70,10 +71,12 @@ export default async function Page({ params }) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Product Image */}
-          <div className="relative h-[500px] rounded-lg overflow-hidden">
-            <img
+          <div className="relative w-full h-full rounded-lg overflow-hidden">
+            <Image
               src={product.imageUrl}
               alt={product.name}
+              fill
+              quality={100}
               className="w-full h-full object-cover"
             />
           </div>

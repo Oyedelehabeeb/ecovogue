@@ -67,13 +67,11 @@ export async function updateUserDetails(formData) {
   const newShippingDetails = {
     fullname: session?.user?.name,
     email: session?.user?.email,
-    address: formData.get("address"),
+    address: formData.get("address").slice(0, 200),
     city: formData.get("city"),
     state: formData.get("state"),
     zip: formData.get("zip"),
   };
-
-  console.log(newShippingDetails);
 
   const { error } = await supabase
     .from("shipping")

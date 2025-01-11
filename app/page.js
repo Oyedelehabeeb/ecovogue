@@ -51,19 +51,19 @@ export default async function Home() {
             <div className="flex justify-center space-x-4">
               <Link
                 href="/women"
-                className="bg-white text-customGreen px-3 py-2 mt-2 rounded-md font-semibold capitalize hover:scale-110 transition-all"
+                className="bg-white border border-green-50 text-customGreen px-3 py-2 mt-2 rounded-md font-semibold capitalize hover:scale-110 transition-all"
               >
                 Shop women
               </Link>
               <Link
                 href="/men"
-                className="bg-white text-customGreen px-3 py-2 mt-2 rounded-md font-semibold capitalize hover:scale-110 transition-all"
+                className="bg-white border border-green-50 text-customGreen px-3 py-2 mt-2 rounded-md font-semibold capitalize hover:scale-110 transition-all"
               >
                 Shop men
               </Link>
               <Link
                 href="/babies"
-                className="bg-white text-customGreen px-3 py-2 mt-2 rounded-md font-semibold capitalize hover:scale-110 transition-all"
+                className="bg-white border border-green-50 text-customGreen px-3 py-2 mt-2 rounded-md font-semibold capitalize hover:scale-110 transition-all"
               >
                 Shop babies
               </Link>
@@ -74,7 +74,7 @@ export default async function Home() {
         <Suspense fallback={<Spinner />}>
           {/* Categories */}
           <section className="p-4 bg-white relative">
-            <h2 className="text-2xl font-bold text-center mb-3 capitalize">
+            <h2 className="text-xl sm:text-2xl font-bold text-center mb-3 capitalize">
               Shop from categories
             </h2>
 
@@ -82,7 +82,7 @@ export default async function Home() {
           </section>
           {/* Featured */}
           <section className="p-4 bg-white relative">
-            <h2 className="text-2xl font-bold text-center mb-3 capitalize">
+            <h2 className="text-xl sm:text-2xl font-bold text-center mb-3 capitalize">
               Featured Products
             </h2>
 
@@ -90,7 +90,7 @@ export default async function Home() {
           </section>
           {/* Trending picks */}
           <section className="p-4 bg-white relative">
-            <h2 className="text-2xl font-bold text-center mb-3 capitalize">
+            <h2 className="text-xl sm:text-2xl font-bold text-center mb-3 capitalize">
               Trending Products
             </h2>
 
@@ -98,12 +98,12 @@ export default async function Home() {
           </section>
           {/* Special for you */}
           <section className="px-20 pb-6 bg-white relative">
-            <h2 className="text-2xl font-bold text-center mb-3 capitalize">
+            <h2 className="text-xl sm:text-2xl font-bold text-center mb-3 capitalize">
               Specials for you
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3: lg:grid-cols-2 px-10 gap-6">
               {specials.map((product, index) => (
-                <Link href={`/${product.productId}`} className="" key={index}>
+                <Link href={`/${product.productId}`} key={index}>
                   <div>
                     <img
                       src={product.imageUrl}
@@ -119,7 +119,7 @@ export default async function Home() {
           <section className="pt-6 bg-gradient-to-r from-customGreen to-green-600">
             <div className="relative w-full h-32 sm:h-64">
               <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <h2 className="text-white capitalize font-semibold text-2xl tracking-widest">
+                <h2 className="text-white capitalize font-semibold text-xl sm:text-2xl tracking-widest">
                   Committed to sustainable fashion
                 </h2>
                 <p className="text-gray-300 capitalize text-sm">
