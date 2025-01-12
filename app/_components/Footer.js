@@ -81,23 +81,23 @@ function Footer() {
       <div className="flex justify-center md:justify-end space-x-4 mt-[-30px]">
         <FaLinkedin
           size={24}
-          className="text-customGreen hover:text-yellow-400 cursor-pointer"
+          className="text-customGreen hover:text-gray-400 cursor-pointer"
         />
         <FaXTwitter
           size={24}
-          className="text-customGreen hover:text-yellow-400 cursor-pointer"
+          className="text-customGreen hover:text-gray-400 cursor-pointer"
         />
         <FaTiktok
           size={24}
-          className="text-customGreen hover:text-yellow-400 cursor-pointer"
+          className="text-customGreen hover:text-gray-400 cursor-pointer"
         />
         <IoLogoFacebook
           size={24}
-          className="text-customGreen hover:text-yellow-400 cursor-pointer"
+          className="text-customGreen hover:text-gray-400 cursor-pointer"
         />
         <CiInstagram
           size={24}
-          className="text-customGreen hover:text-yellow-400 cursor-pointer"
+          className="text-customGreen hover:text-gray-400 cursor-pointer"
         />
       </div>
     </footer>

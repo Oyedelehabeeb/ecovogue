@@ -82,7 +82,7 @@ export default async function ShippingPage() {
                       name="fullname"
                       defaultValue={fullname}
                       required
-                      className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-customGreen"
+                      className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-customGreen cursor-not-allowed"
                       disabled
                     />
                   </div>
@@ -95,7 +95,7 @@ export default async function ShippingPage() {
                       name="email"
                       defaultValue={email}
                       required
-                      className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-customGreen"
+                      className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-customGreen cursor-not-allowed"
                       disabled
                     />
                   </div>
