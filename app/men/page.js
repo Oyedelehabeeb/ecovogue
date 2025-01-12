@@ -16,20 +16,20 @@ export default async function MenPage() {
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Hero Section */}
-      <div className="relative h-[300px] bg-gradient-to-r from-slate-800 to-gray-700 mt-16">
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-          <div className="bg-white/20 px-6 py-2 rounded-full text-sm mb-6">
-            MEN&apos;S COLLECTION
-          </div>
-          <h1 className="text-4xl font-bold mb-4">Style & Sophistication</h1>
-          <p className="text-lg text-gray-100 max-w-2xl text-center">
-            Elevate your wardrobe with our premium men&apos;s collection
+      <div className="relative h-[250px] sm:h-[300px] md:h-[400px] bg-gradient-to-r from-customGreen to-green-600 mt-16">
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-4 text-center">
+            Modern Men&apos;s Fashion
+          </h1>
+          <p className="text-base sm:text-lg md:text-xl text-gray-100 max-w-2xl text-center px-4">
+            Discover our curated collection for the modern man
           </p>
         </div>
       </div>
 
+      {/* Products Grid Section */}
       <Suspense fallback={<Spinner />} key={initialProducts.ProductId}>
-        <div className="container mx-auto px-4 py-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
           <ProductGrid initialProducts={initialProducts} />
         </div>
       </Suspense>
