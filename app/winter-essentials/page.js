@@ -1,4 +1,4 @@
-import { getAllProducts } from "../_lib/data-service";
+import { getWinterEssentials } from "../_lib/data-service";
 import ProductGrid from "../_components/ProductGrid";
 import Spinner from "../_components/Spinner";
 import { Suspense } from "react";
@@ -10,7 +10,7 @@ export const metadata = {
 export const revalidate = 30;
 
 export default async function Page() {
-  const initialProducts = await getAllProducts();
+  const initialProducts = await getWinterEssentials();
 
   return (
     <div className="bg-gray-50 min-h-screen">

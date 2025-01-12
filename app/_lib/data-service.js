@@ -44,6 +44,16 @@ export async function getSpecials() {
 
   return data;
 }
+export async function getWinterEssentials() {
+  const { data, error } = await supabase.from("winterEssentials").select("*");
+
+  if (error) {
+    console.error(error);
+    notFound();
+  }
+
+  return data;
+}
 
 export async function getCart(email) {
   const { data, error } = await supabase
@@ -100,16 +110,28 @@ export async function fetchProductById(productId) {
 }
 
 export async function getAllProducts() {
-  const [categories, featured, trending, specials] = await Promise.all([
-    supabase.from("categories").select("*"),
-    supabase.from("featured").select("*"),
-    supabase.from("trending").select("*"),
-    supabase.from("specials").select("*"),
-  ]);
+  const [categories, featured, trending, specials, winterEssentials] =
+    await Promise.all([
+      supabase.from("categories").select("*"),
+      supabase.from("featured").select("*"),
+      supabase.from("trending").select("*"),
+      supabase.from("specials").select("*"),
+      supabase.from("winterEssentials").select("*"),
+    ]);
 
-  if (categories.error || featured.error || trending.error || specials.error) {
+  if (
+    categories.error ||
+    featured.error ||
+    trending.error ||
+    specials.error ||
+    winterEssentials.error
+  ) {
     console.error(
-      categories.error || featured.error || trending.error || specials.error
+      categories.error ||
+        featured.error ||
+        trending.error ||
+        specials.error ||
+        winterEssentials.error
     );
     notFound();
   }
@@ -119,6 +141,7 @@ export async function getAllProducts() {
     ...featured.data,
     ...trending.data,
     ...specials.data,
+    ...winterEssentials.data,
   ];
 
   return allProducts;
@@ -135,6 +158,11 @@ export async function getAllProductsById(productId) {
       supabase.from("featured").select("*").eq("productId", productId).single(),
       supabase.from("trending").select("*").eq("productId", productId).single(),
       supabase.from("specials").select("*").eq("productId", productId).single(),
+      supabase
+        .from("winterEssentials")
+        .select("*")
+        .eq("productId", productId)
+        .single(),
     ];
 
     const results = await Promise.allSettled(queries);
