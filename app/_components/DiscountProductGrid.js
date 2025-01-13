@@ -122,9 +122,6 @@ export default function DiscountProductGrid({ initialProducts }) {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">
         {sortedProducts.map((product) => (
           <div key={product.id} className="relative">
-            <div className="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm z-10">
-              {formatToNaira(product.discount)} OFF
-            </div>
             <DiscountProductCard
               item={product}
               productId={product.productId}

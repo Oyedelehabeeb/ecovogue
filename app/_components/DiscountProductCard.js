@@ -43,8 +43,16 @@ function DiscountProductCard({
   };
 
   return (
-    <div className="relative flex flex-col w-[270px] h-full shadow-md shadow-gray-300 overflow-hidden group">
-      <div className="relative w-full h-[280px]">
+    <div className="relative w-full sm:w-[220px] md:w-[250px] bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 group">
+      {/* Discount Badge */}
+      <div className="absolute top-2 right-2 z-10">
+        <span className="bg-red-500 text-white text-xs sm:text-sm px-2 py-1 rounded-full">
+          -{formatToNaira(discount)}
+        </span>
+      </div>
+
+      {/* Image Container */}
+      <div className="relative w-full h-[200px] sm:h-[240px] md:h-[280px]">
         <Image
           src={imageUrl}
           alt={name}
@@ -52,29 +60,45 @@ function DiscountProductCard({
           className="object-cover rounded-t-lg"
         />
         <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-          <Link href={`/${productId}`} className="bg-white p-2 rounded-full">
-            <ArrowRight size={36} className="text-customGreen text-2xl" />
+          <Link
+            href={`/${productId}`}
+            className="bg-white p-2 rounded-full hover:scale-110 transition-transform"
+          >
+            <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 text-customGreen" />
           </Link>
         </div>
       </div>
-      <div className="flex flex-col flex-grow p-3">
+
+      {/* Content */}
+      <div className="p-3 sm:p-4">
         <h3
-          className="text-lg font-medium h-12 overflow-hidden text-ellipsis whitespace-nowrap"
+          className="text-sm sm:text-base font-medium mb-2 text-gray-800 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]"
           title={name}
         >
           {truncateName(name)}
         </h3>
-        <div className="flex items-center mt-2 mb-1">
-          {renderStars(rating)}
-          <span className="ml-2 text-sm text-gray-600">({rating})</span>
-        </div>
-        <div className="flex justify-between items-center mt-2">
-          <span className="text-lg font-semibold text-gray-900">
-            {formatToNaira(price - discount)}
+
+        <div className="flex items-center mb-2">
+          <div className="flex items-center scale-90 sm:scale-100">
+            {renderStars(rating)}
+          </div>
+          <span className="ml-1 sm:ml-2 text-xs sm:text-sm text-gray-600">
+            ({rating})
           </span>
+        </div>
+
+        <div className="flex justify-between items-center mt-2">
+          <div className="flex flex-col">
+            <span className="text-xs sm:text-sm text-gray-500 line-through">
+              {formatToNaira(price)}
+            </span>
+            <span className="text-base sm:text-lg font-semibold text-red-500">
+              {formatToNaira(price - discount)}
+            </span>
+          </div>
           <Link
             href={`/${productId}`}
-            className="text-yellow-500 text-sm hover:underline"
+            className="text-xs sm:text-sm text-yellow-500 hover:text-yellow-600 hover:underline transition-colors"
           >
             View details
           </Link>
