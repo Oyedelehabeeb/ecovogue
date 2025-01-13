@@ -4,8 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { MdFavorite } from "react-icons/md";
-import { ShoppingCart } from "lucide-react";
+import { ShoppingCart, Heart } from "lucide-react";
 import { Bitter } from "next/font/google";
 import SignOutButton from "./SignoutButton";
 
@@ -43,7 +42,7 @@ export default function MobileMenu() {
 
         <div className="flex items-center space-x-2">
           <Link href="/saved" className="text-customGreen p-2">
-            <MdFavorite className="h-5 w-5" />
+            <Heart className="h-5 w-5" />
           </Link>
           <Link href="/cart" className="text-customGreen p-2">
             <ShoppingCart className="h-5 w-5" />
