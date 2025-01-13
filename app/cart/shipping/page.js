@@ -1,11 +1,11 @@
 import { ArrowRight, ChevronLeft, ShoppingBag } from "lucide-react";
 import Link from "next/link";
-import OrderSummary from "../_components/OrderSummary";
-import { getCart } from "../_lib/data-service";
+import OrderSummary from "../../_components/OrderSummary";
+import { getCart } from "../../_lib/data-service";
 import { auth } from "@/app/_lib/auth";
 import { updateUserDetails } from "@/app/_lib/actions";
 import Button from "@/app/_components/Button";
-import { useCart } from "../_components/CartContext";
+import { useCart } from "../../_components/CartContext";
 
 export const metadata = {
   title: "shipping-order",

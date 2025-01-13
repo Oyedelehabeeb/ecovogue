@@ -59,8 +59,11 @@ export default async function ProductCard({
           className="object-cover rounded-t-lg"
         />
         <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-          <Link href={`/${productId}`} className="bg-white p-2 rounded-full">
-            <ArrowRight size={36} className="text-customGreen text-2xl" />
+          <Link
+            href={`/${productId}`}
+            className="bg-white p-2 rounded-full hover:scale-110 transition-transform"
+          >
+            <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 text-customGreen" />
           </Link>
         </div>
       </div>

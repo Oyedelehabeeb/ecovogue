@@ -13,6 +13,7 @@ import FeaturedPagination from "./_components/FeaturedPagination";
 import TrendingPagination from "./_components/TrendingPagination";
 import Spinner from "./_components/Spinner";
 import { Suspense } from "react";
+import Footer from "./_components/Footer";
 
 export const revalidate = 20;
 
@@ -115,20 +116,23 @@ export default async function Home() {
               ))}
             </div>
           </section>
-          <section className="pt-6 bg-gradient-to-r from-customGreen to-green-600">
-            <div className="relative w-full h-32 sm:h-64">
-              <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <h2 className="text-white capitalize font-semibold text-xl sm:text-2xl tracking-widest">
-                  Committed to sustainable fashion
-                </h2>
-                <p className="text-gray-300 capitalize text-sm">
-                  Crafted with care, designed for a greener tomorrow
-                </p>
-                <Button>Learn more</Button>
-              </div>
-            </div>
-          </section>
         </Suspense>
+        <section className="pt-6 bg-gradient-to-r from-customGreen to-green-600">
+          <div className="relative w-full h-32 sm:h-64">
+            <div className="absolute inset-0 flex flex-col items-center justify-center">
+              <h2 className="text-white capitalize font-semibold text-xl sm:text-2xl tracking-widest">
+                Committed to sustainable fashion
+              </h2>
+              <p className="text-gray-300 capitalize text-sm">
+                Crafted with care, designed for a greener tomorrow
+              </p>
+              <Button>Learn more</Button>
+            </div>
+          </div>
+        </section>
+        <footer className="w-full">
+          <Footer />
+        </footer>
       </div>
     </>
   );

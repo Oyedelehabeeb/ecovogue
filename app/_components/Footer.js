@@ -78,7 +78,7 @@ function Footer() {
       </div>
 
       {/* Social Media Icons */}
-      <div className="flex justify-center md:justify-end space-x-4 mt-[-30px]">
+      <div className=" hidden md:flex md:items-center md:justify-end space-x-4 mt-[-30px]">
         <FaLinkedin
           size={24}
           className="text-customGreen hover:text-gray-400 cursor-pointer"

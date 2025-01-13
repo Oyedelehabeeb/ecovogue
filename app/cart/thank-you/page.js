@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Package } from "lucide-react";
-import OrderSummary from "../_components/OrderSummary";
-import { getCart } from "../_lib/data-service";
+import OrderSummary from "../../_components/OrderSummary";
+import { getCart } from "../../_lib/data-service";
 import { auth } from "@/app/_lib/auth";
 
 export const metadata = {
