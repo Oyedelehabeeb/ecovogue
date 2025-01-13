@@ -100,7 +100,7 @@ export async function updateUserDetails(formData) {
   if (cartError) {
     throw new Error("Failed to clear cart items");
   }
-  redirect("/thank-you");
+  redirect("/cart/thank-you");
 }
 
 export async function signInAction() {

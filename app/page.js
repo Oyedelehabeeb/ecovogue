@@ -117,20 +117,22 @@ export default async function Home() {
             </div>
           </section>
         </Suspense>
-        <section className="pt-6 bg-gradient-to-r from-customGreen to-green-600">
-          <div className="relative w-full h-32 sm:h-64">
-            <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <h2 className="text-white capitalize font-semibold text-xl sm:text-2xl tracking-widest">
+        <section className="py-8 sm:py-12 md:py-16 bg-gradient-to-r from-customGreen to-green-600">
+          <div className="relative w-full h-40 sm:h-64 md:h-80">
+            <div className="absolute inset-0 flex flex-col items-center justify-center space-y-4 px-4 text-center">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-white capitalize tracking-widest">
                 Committed to sustainable fashion
               </h2>
-              <p className="text-gray-300 capitalize text-sm">
+              <p className="text-sm sm:text-base md:text-lg text-gray-300 capitalize max-w-2xl">
                 Crafted with care, designed for a greener tomorrow
               </p>
-              <Button>Learn more</Button>
+              <Button className="mt-4 sm:mt-6 px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base">
+                Learn more
+              </Button>
             </div>
           </div>
         </section>
-        <footer className="w-full">
+        <footer className="w-full hidden md:block">
           <Footer />
         </footer>
       </div>
