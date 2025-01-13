@@ -49,50 +49,6 @@ export default async function ProductCard({
     return stars;
   };
 
-  // return (
-  //   <div className="relative w-[250px] bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 group">
-  //     <div className="relative w-full h-[280px]">
-  //       <Image
-  //         src={imageUrl}
-  //         alt={name}
-  //         fill
-  //         className="object-cover rounded-t-lg"
-  //       />
-  //       <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-  //         <Link href={`/${productId}`} className="bg-white p-2 rounded-full">
-  //           <ArrowRight size={36} className="text-customGreen text-2xl" />
-  //         </Link>
-  //       </div>
-  //     </div>
-
-  //     <div className="p-4">
-  //       <h3
-  //         className="text-lg font-medium mb-2 text-gray-800 line-clamp-2 min-h-[3.5rem]"
-  //         title={name}
-  //       >
-  //         {truncateName(name)}
-  //       </h3>
-
-  //       <div className="flex items-center mb-2">
-  //         <div className="flex items-center">{renderStars(rating)}</div>
-  //         <span className="ml-2 text-sm text-gray-600">({rating})</span>
-  //       </div>
-
-  //       <div className="flex justify-between items-center mt-2">
-  //         <span className="text-lg font-semibold text-gray-900">
-  //           {formatToNaira(price)}
-  //         </span>
-  //         <Link
-  //           href={`/${productId}`}
-  //           className="text-yellow-500 text-sm hover:text-yellow-600 hover:underline transition-colors duration-200"
-  //         >
-  //           View details
-  //         </Link>
-  //       </div>
-  //     </div>
-  //   </div>
-  // );
-
   return (
     <div className="relative w-full sm:w-[220px] md:w-[250px] bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 group">
       <div className="relative w-full h-[200px] sm:h-[240px] md:h-[280px]">

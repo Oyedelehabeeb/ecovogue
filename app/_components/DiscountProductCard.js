@@ -69,7 +69,6 @@ function DiscountProductCard({
         </div>
       </div>
 
-      {/* Content */}
       <div className="p-3 sm:p-4">
         <h3
           className="text-sm sm:text-base font-medium mb-2 text-gray-800 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem]"

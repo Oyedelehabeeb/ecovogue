@@ -94,6 +94,16 @@ export async function getDiscountedItems() {
   return data;
 }
 
+export async function getBabiesProducts() {
+  const { data, error } = await supabase.from("babies").select("*");
+
+  if (error) {
+    notFound();
+  }
+
+  return data;
+}
+
 export async function fetchProductById(productId) {
   const { data, error } = await supabase
     .from("products")
@@ -110,28 +120,41 @@ export async function fetchProductById(productId) {
 }
 
 export async function getAllProducts() {
-  const [categories, featured, trending, specials, winterEssentials] =
-    await Promise.all([
-      supabase.from("categories").select("*"),
-      supabase.from("featured").select("*"),
-      supabase.from("trending").select("*"),
-      supabase.from("specials").select("*"),
-      supabase.from("winterEssentials").select("*"),
-    ]);
+  const [
+    categories,
+    featured,
+    trending,
+    specials,
+    winterEssentials,
+    babies,
+    discountedItems,
+  ] = await Promise.all([
+    supabase.from("categories").select("*"),
+    supabase.from("featured").select("*"),
+    supabase.from("trending").select("*"),
+    supabase.from("specials").select("*"),
+    supabase.from("winterEssentials").select("*"),
+    supabase.from("babies").select("*"),
+    supabase.from("discountedItems").select("*"),
+  ]);
 
   if (
     categories.error ||
     featured.error ||
     trending.error ||
     specials.error ||
-    winterEssentials.error
+    winterEssentials.error ||
+    babies.error ||
+    discountedItems.error
   ) {
     console.error(
       categories.error ||
         featured.error ||
         trending.error ||
         specials.error ||
-        winterEssentials.error
+        winterEssentials.error ||
+        babies.error ||
+        discountedItems.error
     );
     notFound();
   }
@@ -142,6 +165,8 @@ export async function getAllProducts() {
     ...trending.data,
     ...specials.data,
     ...winterEssentials.data,
+    ...babies.data,
+    ...discountedItems.data,
   ];
 
   return allProducts;
@@ -160,6 +185,12 @@ export async function getAllProductsById(productId) {
       supabase.from("specials").select("*").eq("productId", productId).single(),
       supabase
         .from("winterEssentials")
+        .select("*")
+        .eq("productId", productId)
+        .single(),
+      supabase.from("babies").select("*").eq("productId", productId).single(),
+      supabase
+        .from("discountedItems")
         .select("*")
         .eq("productId", productId)
         .single(),
@@ -214,16 +245,6 @@ export async function getMenProducts() {
   const allProducts = [...categories.data, ...featured.data, ...trending.data];
 
   return allProducts;
-}
-
-export async function getBabiesProducts() {
-  const { data, error } = await supabase.from("babies").select("*");
-
-  if (error) {
-    notFound();
-  }
-
-  return data;
 }
 
 export async function getGuest(email) {

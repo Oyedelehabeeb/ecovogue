@@ -67,7 +67,7 @@ export default async function SavedPage() {
               </p>
 
               <div className="flex justify-between items-center">
-                <AddToCartButton item={item} />
+                <AddToCartButton item={item} useremail={useremail} />
                 <DeleteSavedButton itemId={item.id} />
               </div>
             </div>
