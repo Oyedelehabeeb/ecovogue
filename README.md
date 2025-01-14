@@ -1,36 +1,98 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Ecovogue - Sustainable Fashion E-commerce
+
+## Overview
+
+Ecovogue is a modern e-commerce platform focused on sustainable and eco-friendly fashion. The application provides a seamless shopping experience with features like user authentication, cart management, and secure checkout.
+
+## Tech Stack
+
+- Next.js 14 (App Router)
+- Tailwind CSS
+- Supabase
+- NextAuth.js
+- Lucide Icons
+- React Icons
+
+## Features
+
+- 🔐 Google Authentication
+- 🛍️ Product Categories (Men, Women, Babies)
+- 🛒 Shopping Cart
+- ❤️ Wishlist/Saved Items
+- 🏷️ Special Collections
+  - New Arrivals
+  - Best Sellers
+  - Limited Edition
+  - Discounted Items
+  - Winter Essentials
+- 📱 Responsive Design
+- ⚡ Server-Side Rendering
+- 🔄 Real-time Cart Updates
+- 📦 Smooth Pagination
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- npm/yarn
+- Supabase Account
+- Google OAuth Credentials
+
+### Authentication
+
+- Secure Google OAuth implementation
+- Protected routes and middleware
+- Session management
+
+### Product Management
+
+- Dynamic product loading
+- Category filtering
+- Search functionality
+- Pagination
+
+### Shopping Experience
+
+- Real-time cart updates
+- Wishlist management
+- Size and color selection
+- Responsive product grid
+
+### Checkout Process
+
+- Address collection
+- Order summary
+- Confirmation page
+
+### Contributing
+
+- Fork the repository
+- Create your feature branch: git checkout -b feature/AmazingFeature
+- Commit your changes: git commit -m 'Add some AmazingFeature'
+- Push to the branch: git push origin feature/AmazingFeature
+- Open a Pull Request
+
+### Acknowledgments
+
+- NextAuth.js for authentication
+- Tailwind CSS for styling
+- Supabase for backend services
+- Vercel for hosting
+
+### Contact
+
+Your Name - hoyedeley4@gmail.com Project Link: https://github.com/oyedelehabeeb/ecovogue ```
+
+### Installation
+
+1. Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/oyedelehabeeb/ecovogue.git
+cd ecovogue
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### License
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is licensed under the MIT License.
