@@ -23,7 +23,6 @@ export default function MobileMenu() {
 
   return (
     <>
-      {/* Header with Menu Button and Logo */}
       <div className="flex justify-between items-center p-4">
         <button
           onClick={toggleMenu}

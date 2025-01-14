@@ -118,7 +118,7 @@ export default async function Page() {
             <div className="bg-white rounded-lg p-6 shadow-md sticky top-4">
               <OrderSummary cartItems={cartItems} />
               <Link
-                href="/shipping"
+                href="/cart/shipping"
                 className="bg-customGreen text-white px-6 py-2 rounded-md hover:bg-customGreen/90"
               >
                 Proceed to Shipping
