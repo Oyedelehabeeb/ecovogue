@@ -9,7 +9,7 @@ import {
 import { ChevronRight, Truck, Shield, RefreshCw } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { auth } from "../_lib/auth";
+import { auth } from "@/app/_lib/auth";
 import Image from "next/image";
 
 export const revalidate = 30;
@@ -23,10 +23,14 @@ export async function generateStaticParams() {
   return productsId;
 }
 
-export async function generateMetadata({ params }) {
-  const { name } = await getAllProductsById(params.productId);
-  return { title: `${name}` };
-}
+// export async function generateMetadata({ params }) {
+//   const { name } = await getAllProductsById(params.productId);
+//   return { title: `${name}` };
+// }
+
+export const metadata = {
+  title: "Product",
+};
 
 export default async function Page({ params }) {
   const product = await getAllProductsById(params.productId);
