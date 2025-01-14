@@ -37,7 +37,7 @@ export default function CategoriesPagination({ categories }) {
           <ChevronLeft size={30} className="text-white" />
         </button>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-10">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-10">
           {currentItems.map((item) => (
             <ProductCard
               key={item.id}
