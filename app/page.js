@@ -1,4 +1,4 @@
-import frontpage from "@/public/frontpage.png";
+import ecovogue from "@/public/ecovoguee.png";
 import Image from "next/image";
 import Button from "./_components/Button";
 import {
@@ -31,7 +31,7 @@ export default async function Home() {
         <div className="">
           <div className="relative w-full h-screen">
             <Image
-              src={frontpage}
+              src={ecovogue}
               className="object-cover object-top w-full h-full"
               placeholder="blur"
               quality={80}
