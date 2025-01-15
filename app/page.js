@@ -73,7 +73,7 @@ export default async function Home() {
 
         {/* Categories Section */}
         <section className="py-8 sm:py-12">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto sm:px-4 px-4">
             <h2 className="text-center text-2xl sm:text-3xl  font-semibold mb-6 sm:mb-8">
               Shop by Categories
             </h2>
@@ -85,7 +85,7 @@ export default async function Home() {
 
         {/* Featured Section */}
         <section className="py-8 sm:py-12 bg-gray-50">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto sm:px-4 px-4">
             <h2 className="text-center text-2xl sm:text-3xl font-semibold mb-6 sm:mb-8">
               Featured Collection
             </h2>
@@ -97,7 +97,7 @@ export default async function Home() {
 
         {/* Trending Section */}
         <section className="py-8 sm:py-12">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto sm:px-4 px-4">
             <h2 className="text-center text-2xl sm:text-3xl font-semibold mb-6 sm:mb-8">
               Trending Now
             </h2>
