@@ -22,7 +22,7 @@ export default async function Page() {
 
   return (
     <div className="min-h-screen bg-gray-50 pt-16">
-      <div className="flex justify-center items-center space-x-4 mt-20">
+      <div className="flex justify-center items-center space-x-4 mt-16">
         <div className="flex items-center">
           <span className="w-8 h-8 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center">
             1

@@ -41,7 +41,7 @@ export default async function Page() {
     <div className="bg-gray-50 min-h-screen">
       {/* Progress Stepper */}
       <div className="container mx-auto px-4 py-8">
-        <div className="flex justify-center items-center space-x-4 mt-20">
+        <div className="flex justify-center items-center space-x-4 mt-16">
           <div className="flex items-center">
             <span className="w-8 h-8 rounded-full bg-customGreen text-white flex items-center justify-center">
               1
