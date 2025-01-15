@@ -27,7 +27,7 @@ export default function CategoriesPagination({ categories }) {
 
   return (
     <div className="relative">
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-between sm:justify-center ">
         <button
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
