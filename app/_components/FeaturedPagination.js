@@ -26,45 +26,88 @@ export default function FeaturedPagination({ featured }) {
   };
 
   return (
-    <div className="relative">
-      <div className="flex items-center justify-between sm:justify-center">
-        <button
-          onClick={() => handlePageChange(currentPage - 1)}
-          disabled={currentPage === 1}
-          className="absolute left-0 z-10 bg-stone-400 rounded-full shadow-md p-2 hover:scale-110 transition disabled:opacity-50 disabled:cursor-not-allowed"
-          aria-label="Previous page"
-        >
-          <ChevronLeft size={30} className="text-white" />
-        </button>
+    <>
+      <div className="hidden sm:block md:block lg:block relative">
+        <div className="flex items-center justify-center">
+          <button
+            onClick={() => handlePageChange(currentPage - 1)}
+            disabled={currentPage === 1}
+            className="absolute left-0 z-10 bg-stone-400 rounded-full shadow-md p-2 hover:scale-110 transition disabled:opacity-50 disabled:cursor-not-allowed"
+            aria-label="Previous page"
+          >
+            <ChevronLeft size={30} className="text-white" />
+          </button>
 
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-10">
-          {currentItems.map((item) => (
-            <ProductCard
-              key={item.id}
-              id={item.id}
-              item={item}
-              productId={item.productId}
-              name={item.name}
-              imageUrl={item.imageUrl}
-              price={item.price}
-              rating={item.rating}
-            />
-          ))}
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-10">
+            {currentItems.map((item) => (
+              <ProductCard
+                key={item.id}
+                id={item.id}
+                item={item}
+                productId={item.productId}
+                name={item.name}
+                imageUrl={item.imageUrl}
+                price={item.price}
+                rating={item.rating}
+              />
+            ))}
+          </div>
+
+          <button
+            onClick={() => handlePageChange(currentPage + 1)}
+            disabled={currentPage === totalPages}
+            className="absolute right-0 z-10 bg-stone-400 rounded-full shadow-md p-2 hover:scale-110 transition disabled:opacity-50 disabled:cursor-not-allowed"
+            aria-label="Next page"
+          >
+            <ChevronRight size={30} className="text-white" />
+          </button>
         </div>
 
-        <button
-          onClick={() => handlePageChange(currentPage + 1)}
-          disabled={currentPage === totalPages}
-          className="absolute right-0 z-10 bg-stone-400 rounded-full shadow-md p-2 hover:scale-110 transition disabled:opacity-50 disabled:cursor-not-allowed"
-          aria-label="Next page"
-        >
-          <ChevronRight size={30} className="text-white" />
-        </button>
+        <div className="text-center mt-4 text-sm text-gray-600">
+          Page {currentPage} of {totalPages}
+        </div>
       </div>
+      <div className="block sm:hidden md:hidden lg:hidden relative">
+        <div className="flex flex-col items-center justify-between">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-10">
+            {currentItems.map((item) => (
+              <ProductCard
+                key={item.id}
+                id={item.id}
+                item={item}
+                productId={item.productId}
+                name={item.name}
+                imageUrl={item.imageUrl}
+                price={item.price}
+                rating={item.rating}
+              />
+            ))}
+          </div>
 
-      <div className="text-center mt-4 text-sm text-gray-600">
-        Page {currentPage} of {totalPages}
+          <div className="flex items-center justify-between w-full px-10">
+            <button
+              onClick={() => handlePageChange(currentPage - 1)}
+              disabled={currentPage === 1}
+              className="absolute left-0 z-10 bg-stone-400 rounded-full shadow-md p-2 hover:scale-110 transition disabled:opacity-50 disabled:cursor-not-allowed"
+              aria-label="Previous page"
+            >
+              <ChevronLeft size={30} className="text-white" />
+            </button>
+            <button
+              onClick={() => handlePageChange(currentPage + 1)}
+              disabled={currentPage === totalPages}
+              className="absolute right-0 z-10 bg-stone-400 rounded-full shadow-md p-2 hover:scale-110 transition disabled:opacity-50 disabled:cursor-not-allowed"
+              aria-label="Next page"
+            >
+              <ChevronRight size={30} className="text-white" />
+            </button>
+          </div>
+        </div>
+
+        <div className="text-center mt-4 text-sm text-gray-600">
+          Page {currentPage} of {totalPages}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
