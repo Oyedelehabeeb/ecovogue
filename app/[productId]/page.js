@@ -23,14 +23,14 @@ export async function generateStaticParams() {
   return productsId;
 }
 
-export async function generateMetadata({ params }) {
-  const { name } = await getAllProductsById(params.productId);
-  return { title: `${name}` };
-}
+// export async function generateMetadata({ params }) {
+//   const { name } = await getAllProductsById(params.productId);
+//   return { title: `${name}` };
+// }
 
-// export const metadata = {
-//   title: "Product",
-// };
+export const metadata = {
+  title: "Product",
+};
 
 export default async function Page({ params }) {
   const product = await getAllProductsById(params.productId);
