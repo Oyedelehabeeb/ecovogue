@@ -69,7 +69,7 @@ export default function CategoriesPagination({ categories }) {
       </div>
       <div className="block sm:hidden md:hidden lg:hidden relative">
         <div className="flex flex-col items-center justify-between">
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-10">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-9 sm:gap-6 px-0 sm:px-10">
             {currentItems.map((item) => (
               <ProductCard
                 key={item.id}
@@ -89,7 +89,7 @@ export default function CategoriesPagination({ categories }) {
               <button
                 onClick={() => handlePageChange(currentPage - 1)}
                 disabled={currentPage === 1}
-                className="absolute left-0 z-10 bg-stone-400 rounded-full shadow-md p-2 hover:scale-110 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                className="absolute left-0 z-10 bg-stone-400 rounded-full shadow-md p-2 hover:scale-100 transition disabled:opacity-50 disabled:cursor-not-allowed"
                 aria-label="Previous page"
               >
                 <ChevronLeft size={30} className="text-white" />
@@ -97,7 +97,7 @@ export default function CategoriesPagination({ categories }) {
               <button
                 onClick={() => handlePageChange(currentPage + 1)}
                 disabled={currentPage === totalPages}
-                className="absolute right-0 z-10 bg-stone-400 rounded-full shadow-md p-2 hover:scale-110 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                className="absolute right-0 z-10 bg-stone-400 rounded-full shadow-md p-2 hover:scale-100 transition disabled:opacity-50 disabled:cursor-not-allowed"
                 aria-label="Next page"
               >
                 <ChevronRight size={30} className="text-white" />

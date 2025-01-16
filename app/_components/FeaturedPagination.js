@@ -89,7 +89,7 @@ export default function FeaturedPagination({ featured }) {
               <button
                 onClick={() => handlePageChange(currentPage - 1)}
                 disabled={currentPage === 1}
-                className="absolute left-0 z-10 bg-stone-400 rounded-full shadow-md p-2 hover:scale-110 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                className="absolute left-0 z-10 bg-stone-400 rounded-full shadow-md p-2 hover:scale-100 transition disabled:opacity-50 disabled:cursor-not-allowed"
                 aria-label="Previous page"
               >
                 <ChevronLeft size={30} className="text-white" />
@@ -97,7 +97,7 @@ export default function FeaturedPagination({ featured }) {
               <button
                 onClick={() => handlePageChange(currentPage + 1)}
                 disabled={currentPage === totalPages}
-                className="absolute right-0 z-10 bg-stone-400 rounded-full shadow-md p-2 hover:scale-110 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                className="absolute right-0 z-10 bg-stone-400 rounded-full shadow-md p-2 hover:scale-100 transition disabled:opacity-50 disabled:cursor-not-allowed"
                 aria-label="Next page"
               >
                 <ChevronRight size={30} className="text-white" />
