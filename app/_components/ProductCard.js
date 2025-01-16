@@ -85,7 +85,7 @@ export default async function ProductCard({
           </span>
         </div>
 
-        <div className="flex justify-between items-center mt-2">
+        <div className="flex flex-col gap-2 sm:gap-0 sm:flex-row sm:justify-between sm:items-center mt-2">
           <span className="text-xs sm:text-lg font-semibold text-gray-900">
             {formatToNaira(price)}
           </span>
