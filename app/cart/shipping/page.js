@@ -40,8 +40,7 @@ export default async function ShippingPage() {
   return (
     <div className="min-h-screen bg-gray-50 pt-16">
       <div className="container mx-auto px-4 py-8">
-        {/* Progress Stepper */}
-        <div className="flex justify-center items-center space-x-4 mb-12">
+        <div className="flex justify-center items-center space-x-4 mb-6 sm:mb-12">
           <div className="flex items-center">
             <span className="w-8 h-8 rounded-full bg-customGreen text-white flex items-center justify-center">
               1
