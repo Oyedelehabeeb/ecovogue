@@ -38,7 +38,7 @@ export default async function ShippingPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-16">
+    <div className="min-h-screen bg-gray-50 pt-8 sm:pt-16">
       <div className="container mx-auto px-4 p-3 sm:py-8">
         <div className="flex justify-center items-center space-x-4 mb-6 sm:mb-12">
           <div className="flex items-center">

@@ -69,7 +69,7 @@ export default function TrendingPagination({ trending }) {
       </div>
       <div className="block sm:hidden md:hidden lg:hidden relative">
         <div className="flex flex-col items-center justify-between">
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-10">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 px-0 sm:px-10">
             {currentItems.map((item) => (
               <ProductCard
                 key={item.id}

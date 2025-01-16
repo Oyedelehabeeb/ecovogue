@@ -21,7 +21,7 @@ export default async function Page() {
   ).toLocaleDateString();
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-16">
+    <div className="min-h-screen bg-gray-50 pt-8 sm:pt-16">
       <div className="flex justify-center items-center space-x-4 mt-6 sm:mt-16">
         <div className="flex items-center">
           <span className="w-8 h-8 rounded-full bg-customGreen text-white flex items-center justify-center">
