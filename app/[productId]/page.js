@@ -11,6 +11,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { auth } from "@/app/_lib/auth";
 import Image from "next/image";
+import { redirect } from "next/navigation";
 
 export const revalidate = 30;
 
@@ -39,6 +40,10 @@ export default async function Page({ params }) {
 
   if (!product) {
     notFound();
+  }
+
+  if (!session) {
+    redirect("/login");
   }
 
   const renderStars = (rating) => {
