@@ -54,7 +54,7 @@ Ecovogue is a modern e-commerce platform focused on sustainable and eco-friendly
 
 ### Shopping Experience
 
-- Real-time cart updates
+- Real-time cart update
 - Wishlist management
 - Size and color selection
 - Responsive product grid
