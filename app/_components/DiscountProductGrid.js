@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import DiscountProductCard from "./DiscountProductCard";
-import ProductOperations from "./ProductOperations";
+import ProductOperations from "./ProductOperation";
 import Loader from "../loader";
 import { Search } from "lucide-react";
 import { useSearchParams } from "next/navigation";
@@ -119,7 +119,7 @@ export default function DiscountProductGrid({ initialProducts }) {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">
+      <div className="catalog-grid">
         {sortedProducts.map((product) => (
           <div key={product.id} className="relative">
             <DiscountProductCard

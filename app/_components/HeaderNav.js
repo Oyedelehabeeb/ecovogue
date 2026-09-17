@@ -1,29 +1,22 @@
 "use client";
 
 import Link from "next/link";
-import { Bitter } from "next/font/google";
 import { usePathname } from "next/navigation";
-import { MdFavorite } from "react-icons/md";
-import { ShoppingCart } from "lucide-react";
+import { Heart, ShoppingBag } from "lucide-react";
 import SignOutButton from "./SignoutButton";
-
-const bitter = Bitter({
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export default function HeaderNav() {
   const pathname = usePathname();
 
   return (
-    <div className="flex justify-between items-center px-4 py-4">
+    <div className="flex h-[76px] items-center justify-between px-6 xl:px-10">
       <div className="flex items-center">
-        <nav className="ml-8">
-          <ul className="flex space-x-3 sm:space-x-6">
+        <nav>
+          <ul className="flex gap-7">
             <li>
               <Link
                 href="/women"
-                className={`text-customGreen text-sm sm:text-base relative pb-1 ${
+                className={`nav-link ${
                   pathname === "/women"
                     ? "after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-yellow-400"
                     : ""
@@ -35,7 +28,7 @@ export default function HeaderNav() {
             <li>
               <Link
                 href="/men"
-                className={`text-customGreen text-sm sm:text-base relative pb-1 ${
+                className={`nav-link ${
                   pathname === "/men"
                     ? "after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-yellow-400"
                     : ""
@@ -47,7 +40,7 @@ export default function HeaderNav() {
             <li>
               <Link
                 href="/babies"
-                className={`text-customGreen text-sm sm:text-base relative pb-1 ${
+                className={`nav-link ${
                   pathname === "/babies"
                     ? "after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-yellow-400"
                     : ""
@@ -59,7 +52,7 @@ export default function HeaderNav() {
             <li>
               <Link
                 href="/about"
-                className={`text-customGreen text-sm sm:text-base relative pb-1 ${
+                className={`nav-link ${
                   pathname === "/about"
                     ? "after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-yellow-400"
                     : ""
@@ -74,33 +67,33 @@ export default function HeaderNav() {
 
       <Link
         href="/"
-        className={`${bitter.className}  text-customGreen text-xl sm:text-4xl uppercase font-semibold`}
+        className="brand-mark absolute left-1/2 -translate-x-1/2"
       >
-        Ecovogue
+        ECO<span>VOGUE</span>
       </Link>
 
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center gap-1">
         <Link
           href="/saved"
-          className={`rounded-lg px-4 py-2 flex items-center text-customGreen text-sm sm:text-base relative ${
+          className={`header-action ${
             pathname === "/saved"
               ? "after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-yellow-400"
               : ""
           }`}
         >
-          <MdFavorite className="h-5 w-5 mr-2 text-customGreen" />
-          Saved
+          <Heart className="h-[18px] w-[18px]" />
+          <span className="sr-only">Saved</span>
         </Link>
         <Link
           href="/cart"
-          className={`rounded-lg px-4 py-2 flex items-center text-customGreen text-sm sm:text-base relative ${
+          className={`header-action ${
             pathname === "/cart"
               ? "after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-yellow-400"
               : ""
           }`}
         >
-          <ShoppingCart className="h-5 w-5 mr-2 text-customGreen" />
-          Cart
+          <ShoppingBag className="h-[18px] w-[18px]" />
+          <span className="sr-only">Cart</span>
         </Link>
         <SignOutButton />
       </div>

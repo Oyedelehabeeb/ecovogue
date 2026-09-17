@@ -48,16 +48,17 @@ import loginBg from "@/public/logo.png";
 
 export default function SignInPage() {
   return (
-    <div className="min-h-screen bg-gray-50 flex">
+    <div className="min-h-screen bg-[#f5f1e9] flex">
       {/* Left Section - Login Form */}
       <div className="w-full lg:w-[47%] flex items-center justify-center px-6">
         <div className="max-w-md w-full space-y-8 p-8">
           <div>
-            <h2 className="mt-6 text-center text-4xl font-extrabold text-gray-900">
-              Welcome back
-            </h2>
-            <p className="mt-2 text-center text-sm text-gray-600 mb-8">
-              Continue with Google to access your account
+            <p className="eyebrow text-center">Ecovogue members</p>
+            <h1 className="mt-6 text-center text-6xl font-medium text-[#14251d]">
+              Welcome home.
+            </h1>
+            <p className="mt-5 text-center text-sm leading-6 text-gray-600 mb-8">
+              Sign in to save considered pieces, manage orders and make checkout beautifully simple.
             </p>
           </div>
 

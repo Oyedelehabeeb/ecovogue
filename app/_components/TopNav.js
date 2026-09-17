@@ -7,18 +7,18 @@ export default function TopNav() {
   const pathname = usePathname();
 
   return (
-    <div className="container mx-auto px-4 py-4 flex justify-center space-x-8">
+    <div className="h-12 flex items-center justify-center gap-9 border-t border-black/[.06]">
       <Link
         href="/discountedItems"
-        className={`text-customGreen text-sm sm:text-base hover:text-gray-400 ${
+        className={`subnav-link ${
           pathname === "/discountedItems" ? "text-yellow-400" : ""
         } `}
       >
-        Discounted Items
+        Offers
       </Link>
       <Link
         href="/bestseller"
-        className={`text-customGreen text-sm sm:text-base hover:text-gray-400 ${
+        className={`subnav-link ${
           pathname === "/bestseller" ? "text-yellow-400" : ""
         }`}
       >
@@ -26,7 +26,7 @@ export default function TopNav() {
       </Link>
       <Link
         href="/winter-essentials"
-        className={` text-customGreen text-sm sm:text-base hover:text-gray-400 ${
+        className={`subnav-link ${
           pathname === "/winter-essentials" ? "text-yellow-400" : ""
         }`}
       >
@@ -34,7 +34,7 @@ export default function TopNav() {
       </Link>
       <Link
         href="/new-arrivals"
-        className={` text-customGreen text-sm sm:text-base hover:text-gray-400 ${
+        className={`subnav-link ${
           pathname === "/new-arrivals" ? "text-yellow-400" : ""
         }`}
       >
@@ -42,7 +42,7 @@ export default function TopNav() {
       </Link>
       <Link
         href="/limited-edition-items"
-        className={` text-customGreen text-sm sm:text-base hover:text-gray-400 ${
+        className={`subnav-link ${
           pathname === "/limited-edition-items" ? "text-yellow-400" : ""
         }`}
       >
@@ -50,7 +50,7 @@ export default function TopNav() {
       </Link>
       <Link
         href="/on-sale"
-        className={` text-customGreen text-sm sm:text-base hover:text-gray-400 ${
+        className={`subnav-link text-[#a44d34] ${
           pathname === "/on-sale" ? "text-yellow-400" : ""
         }`}
       >

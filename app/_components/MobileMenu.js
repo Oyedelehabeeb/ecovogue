@@ -5,13 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { ShoppingCart, Heart } from "lucide-react";
-import { Bitter } from "next/font/google";
 import SignOutButton from "./SignoutButton";
-
-const bitter = Bitter({
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +17,7 @@ export default function MobileMenu() {
 
   return (
     <>
-      <div className="flex justify-between items-center p-4">
+      <div className="flex h-[72px] justify-between items-center px-4">
         <button
           onClick={toggleMenu}
           className="text-customGreen p-2"
@@ -34,9 +28,9 @@ export default function MobileMenu() {
 
         <Link
           href="/"
-          className={`${bitter.className} text-customGreen text-2xl uppercase font-semibold`}
+          className="brand-mark"
         >
-          Ecovogue
+          ECO<span>VOGUE</span>
         </Link>
 
         <div className="flex items-center space-x-2">
@@ -51,11 +45,11 @@ export default function MobileMenu() {
 
       {/* Sidebar Navigation */}
       <div
-        className={`fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out ${
+        className={`fixed inset-y-0 left-0 z-50 w-[86vw] max-w-sm bg-[#fbfaf6] shadow-2xl transform transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="h-full overflow-y-auto py-4">
+        <div className="h-full overflow-y-auto px-3 py-8">
           {/* Main Navigation */}
           <nav className="px-4 mb-6">
             <h3 className="text-sm font-semibold text-gray-400 mb-2">

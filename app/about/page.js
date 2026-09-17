@@ -82,7 +82,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      ;{/* Impact Stats */}
+      {/* Impact Stats */}
       <section className="bg-customGreen/5 py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-16 text-customGreen">
@@ -109,7 +109,7 @@ export default function Page() {
             </div>
             <div className="p-6 bg-white rounded-lg shadow-sm">
               <div className="text-4xl font-bold text-customGreen mb-2">
-                90%/
+                90%
               </div>
               <p className="text-gray-600">Waste Reduction</p>
             </div>

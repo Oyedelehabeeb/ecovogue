@@ -92,27 +92,27 @@ export default function ProductGrid({ initialProducts }) {
 
   return (
     <div>
-      <div className="flex flex-col md:flex-row justify-between items-center mt-4">
-        <div className="flex flex-wrap gap-4 items-center w-full md:w-auto mb-4 md:mb-0">
+      <div className="catalog-toolbar">
+        <div className="flex flex-wrap gap-3 items-center w-full md:w-auto">
           <div className="relative flex-1 md:flex-none md:w-64">
             <input
               type="search"
               value={searchTerm}
               onChange={handleSearch}
               placeholder="Search products..."
-              className="w-full bg-gray-100 rounded-lg px-4 py-2 pr-8 pl-10 border focus:outline-none focus:ring-2 focus:ring-customGreen"
+              className="catalog-search"
             />
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
           </div>
 
           <ProductOperations />
         </div>
-        <div className="text-sm text-gray-600">
-          {filteredProducts.length} items found
+        <div className="catalog-count">
+          {filteredProducts.length} pieces
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6">
+      <div className="catalog-grid">
         {sortedProducts.map((product) => (
           <ProductCard
             item={product}

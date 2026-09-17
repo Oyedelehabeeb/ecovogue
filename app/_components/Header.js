@@ -22,7 +22,7 @@ import MobileMenu from "./MobileMenu";
 
 export default function Header() {
   return (
-    <header className="bg-white divide-y-2 divide-gray-100 mt-0">
+    <header className="site-header">
       {/* Mobile Menu - Show only on mobile */}
       <div className="lg:hidden">
         <MobileMenu />

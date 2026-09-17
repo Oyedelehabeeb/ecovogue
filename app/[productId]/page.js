@@ -70,7 +70,7 @@ export default async function Page({ params }) {
   }).format(product.price);
 
   return (
-    <div className="min-h-screen bg-gray-50 py-4 sm:py-6 lg:py-8 mt-16">
+    <div className="product-page min-h-screen py-8 lg:py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb */}
         <nav className="flex items-center text-sm mb-4 sm:mb-6 lg:mb-8">
@@ -81,11 +81,11 @@ export default async function Page({ params }) {
           <span className="text-gray-900">{product.name}</span>
         </nav>
 
-        <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+        <div className="product-detail overflow-hidden">
           <div className="flex flex-col lg:flex-row">
             {/* Image */}
             <div className="w-full lg:w-1/2">
-              <div className="relative h-[300px] sm:h-[400px] lg:h-[500px]">
+              <div className="relative h-[420px] sm:h-[560px] lg:h-[720px]">
                 <Image
                   src={product.imageUrl}
                   alt={product.name}
@@ -97,12 +97,13 @@ export default async function Page({ params }) {
             </div>
 
             {/* Details */}
-            <div className="w-full lg:w-1/2 p-4 sm:p-6 lg:p-8">
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            <div className="w-full lg:w-1/2 p-6 sm:p-10 lg:p-16 lg:flex lg:flex-col lg:justify-center">
+              <p className="eyebrow">Ecovogue collection</p>
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-medium text-gray-900 mb-6 leading-[.9]">
                 {product.name}
               </h1>
 
-              <p className="text-base sm:text-lg md:text-xl text-gray-500 mb-4">
+              <p className="text-base text-gray-500 mb-6 leading-7 max-w-xl">
                 {product.description}
               </p>
 
@@ -115,7 +116,7 @@ export default async function Page({ params }) {
                 </span>
               </div>
 
-              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-6">
+              <div className="text-lg font-bold text-gray-900 mb-8">
                 {formattedPrice}
               </div>
 
@@ -129,7 +130,7 @@ export default async function Page({ params }) {
                     {["S", "M", "L", "XL"].map((size) => (
                       <button
                         key={size}
-                        className="py-2 px-4 text-sm sm:text-base border rounded-md hover:border-customGreen focus:outline-none focus:ring-2 focus:ring-customGreen"
+                        className="py-3 px-4 text-xs border border-[#14251d]/20 hover:border-[#14251d] focus:outline-none"
                       >
                         {size}
                       </button>

@@ -1,107 +1,20 @@
-import { FaLinkedin } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-import { FaTiktok } from "react-icons/fa";
-import { IoLogoFacebook } from "react-icons/io";
-import { CiInstagram } from "react-icons/ci";
-function Footer() {
+import Link from "next/link";
+import { Instagram, Facebook, Linkedin } from "lucide-react";
+
+const groups = [
+  { title: "Shop", links: [["Women", "/women"], ["Men", "/men"], ["Little ones", "/babies"], ["New arrivals", "/new-arrivals"]] },
+  { title: "Help", links: [["Delivery & returns", "#"], ["Size guide", "#"], ["Track an order", "#"], ["Contact", "#"]] },
+  { title: "Ecovogue", links: [["Our story", "/about"], ["Materials", "/about"], ["Responsibility", "/about"], ["Careers", "#"]] },
+];
+
+export default function Footer() {
   return (
-    <footer className="bg-gray-100 text-gray-800 px-6 py-8 h-[400px]">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {/* Help Centre */}
-        <div>
-          <h3 className="font-bold text-lg mb-4">Help Centre</h3>
-          <ul className="space-y-2">
-            <li>How to Shop</li>
-            <li>Source a Product</li>
-            <li>Size Guide</li>
-            <li>Track Your Order</li>
-            <li>Shop Worldwide</li>
-            <li>Gift Cards</li>
-          </ul>
-        </div>
-
-        {/* About Us */}
-        <div>
-          <h3 className="font-bold text-lg mb-4">About Us</h3>
-          <ul className="space-y-2">
-            <li>About Us</li>
-            <li>Diversity</li>
-            <li>Global Shipping</li>
-            <li>Careers</li>
-            <li>Become An Affiliate</li>
-            <li>Privacy Policy</li>
-          </ul>
-        </div>
-
-        {/* Resources */}
-        <div>
-          <h3 className="font-bold text-lg mb-4">Resources</h3>
-          <ul className="space-y-2">
-            <li>Terms and Conditions</li>
-            <li>Privacy Policy</li>
-            <li>Community</li>
-            <li>Success Stories</li>
-            <li>Accessibility</li>
-            <li>Sitemap</li>
-          </ul>
-        </div>
-
-        {/* Company */}
-        <div>
-          <h3 className="font-bold text-lg mb-4">Company</h3>
-          <ul className="space-y-2">
-            <li>About Us</li>
-            <li>Stakeholders</li>
-            <li>Careers</li>
-            <li>Contact Us</li>
-            <li>Partners</li>
-            <li>Press Centre</li>
-          </ul>
-        </div>
+    <div className="site-footer">
+      <div className="footer-top">
+        <div className="footer-brand"><Link href="/" className="brand-mark brand-mark-light">ECO<span>VOGUE</span></Link><p>Considered fashion for a more thoughtful everyday.</p></div>
+        {groups.map((group) => <div key={group.title} className="footer-group"><h3>{group.title}</h3>{group.links.map(([label, href]) => <Link key={label} href={href}>{label}</Link>)}</div>)}
       </div>
-
-      {/* Newsletter */}
-      <div className="mt-8 text-center md:text-left">
-        <h3 className="font-bold text-lg mb-2">
-          Sign Up for Email Deals & Cashback
-        </h3>
-        <div className="flex justify-center md:justify-start items-center mt-2">
-          <input
-            type="email"
-            placeholder="Enter email address"
-            className="border border-gray-400 p-2 rounded-l w-full max-w-xs"
-          />
-          <button className="bg-customGreen text-white px-4 py-2 rounded-r">
-            Submit
-          </button>
-        </div>
-      </div>
-
-      {/* Social Media Icons */}
-      <div className=" hidden md:flex md:items-center md:justify-end space-x-4 mt-[-30px]">
-        <FaLinkedin
-          size={24}
-          className="text-customGreen hover:text-gray-400 cursor-pointer"
-        />
-        <FaXTwitter
-          size={24}
-          className="text-customGreen hover:text-gray-400 cursor-pointer"
-        />
-        <FaTiktok
-          size={24}
-          className="text-customGreen hover:text-gray-400 cursor-pointer"
-        />
-        <IoLogoFacebook
-          size={24}
-          className="text-customGreen hover:text-gray-400 cursor-pointer"
-        />
-        <CiInstagram
-          size={24}
-          className="text-customGreen hover:text-gray-400 cursor-pointer"
-        />
-      </div>
-    </footer>
+      <div className="footer-bottom"><span>© {new Date().getFullYear()} Ecovogue</span><span>Lagos · Nigeria</span><div className="footer-socials"><Instagram size={17} /><Facebook size={17} /><Linkedin size={17} /></div></div>
+    </div>
   );
 }
-
-export default Footer;
